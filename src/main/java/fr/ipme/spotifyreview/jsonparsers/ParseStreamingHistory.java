@@ -1,6 +1,6 @@
-package fr.ipme;
+package fr.ipme.spotifyreview.jsonparsers;
 
-import 0fr.ipme.datamodel.*;
+import fr.ipme.spotifyreview.domain.*;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class ParsePlaylists {
+public class ParseStreamingHistory {
 
     public static ArrayList<StreamingHistory> parseStreamingHistory(){
         //PARSE StreamingHistory;
@@ -36,7 +36,8 @@ public class ParsePlaylists {
 
             Artist artist =  new Artist((String) jsonO.get("artistName"));
             SongTitle title = new SongTitle((String) jsonO.get("trackName"));
-            TimePlayed msplayed = new TimePlayed((Long)jsonO.get("msPlayed"));
+            Song song = new Song(artist, title);
+            Long msplayed = (Long)jsonO.get("msPlayed");
             DateFormat parseFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
             Date date = null;
             try {
@@ -45,15 +46,15 @@ public class ParsePlaylists {
                 throw new RuntimeException(e);
             }
             ListeningDate listeningDate = new ListeningDate(date);
-            historyList.add(new StreamingHistory(artist, title, msplayed, listeningDate));
+            historyList.add(new StreamingHistory(song, msplayed, listeningDate));
 
         }
         for(int i=0;i< historyList.size();i++){
-            System.out.println(historyList.get(i).artist.toString());
+            System.out.println(historyList.get(i).getSong().getArtist().toString());
         }
         for(int i=0;i< historyList.size();i++){
             System.out.println(historyList.get(i).listeningDate.toString());
         }
-    return historyList;
+        return historyList;
     }
 }

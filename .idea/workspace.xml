@@ -4,23 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d9acde2-d5bc-4b46-8889-03e6579d4eef" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/ipme/DatabaseConnect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/ipme/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/ipme/ParsePlaylists.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/ipme/ParseStreamingHistory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/ipme/datamodel/Artist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/ipme/datamodel/ListeningDate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/ipme/datamodel/SongTitle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/ipme/datamodel/StreamingHistory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/ipme/datamodel/TimePlayed.java" afterDir="false" />
+    <list default="true" id="3d9acde2-d5bc-4b46-8889-03e6579d4eef" name="Changes" comment="Reformat Code (domains, database and jsonparsers packages.)&#10;&#10;Added javax.jdo package to pom.xml file in order to start persistency database phase. removed annotations for test purpose with following github java ORM project (which has been a fail) https://github.com/springframeworkguru/springbootwebapp&#10;&#10;JSON Parsers work for StreamingHistory and Playlists.&#10;&#10;JSON files are included inside the project.&#10;&#10;The project connects to a docker which runs on my personal server">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/ipme/spotifyreview/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/ipme/spotifyreview/domain/Album.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/ipme/spotifyreview/domain/Playlist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/ipme/spotifyreview/domain/PlaylistTrack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/ipme/spotifyreview/domain/Song.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/ipme/spotifyreview/domain/SongTitle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/ipme/spotifyreview/domain/StreamingHistory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/ipme/spotifyreview/jsonparsers/ParsePlaylists.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ipme/DatabaseConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ipme/spotifyreview/database/DatabaseConnect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ipme/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ipme/ParsePlaylists.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ipme/ParseStreamingHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ipme/spotifyreview/jsonparsers/ParseStreamingHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ipme/datamodel/Artist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ipme/spotifyreview/domain/Artist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ipme/datamodel/ListeningDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ipme/spotifyreview/domain/ListeningDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ipme/datamodel/SongTitle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ipme/datamodel/StreamingHistory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ipme/datamodel/TimePlayed.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +40,19 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="1abbec40-dacd-40e1-8b40-c716cc912c66" />
+        <option name="url" value="https://github.com/adubois-dev/MyOwnSpotifyReview.old" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -58,6 +75,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/arnaud/IdeaProjects/MyOwnSpotifyReview&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.44367817&quot;,
@@ -74,11 +92,11 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="fr.ipme.Main" />
+      <option name="MAIN_CLASS_NAME" value="fr.ipme.spotifyreview.Main" />
       <module name="MyOwnSpotifyReview" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="fr.ipme.*" />
+          <option name="PATTERN" value="fr.ipme.spotifyreview.jsonparsers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -102,5 +120,21 @@
       <updated>1679761070418</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Reformat Code (domains, database and jsonparsers packages.&#10;&#10;Added javax.jdo package to pom.xml file in order to start persistency database phase" />
+    <MESSAGE value="Reformat Code (domains, database and jsonparsers packages.)&#10;&#10;Added javax.jdo package to pom.xml file in order to start persistency database phase. removed annotations for test purpose with following github java ORM project (which has been a fail) https://github.com/springframeworkguru/springbootwebapp&#10;&#10;JSON Parsers work for StreamingHistory and Playlists.&#10;&#10;JSON files are included inside the project.&#10;&#10;The project connects to a docker which runs on my personal server" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reformat Code (domains, database and jsonparsers packages.)&#10;&#10;Added javax.jdo package to pom.xml file in order to start persistency database phase. removed annotations for test purpose with following github java ORM project (which has been a fail) https://github.com/springframeworkguru/springbootwebapp&#10;&#10;JSON Parsers work for StreamingHistory and Playlists.&#10;&#10;JSON files are included inside the project.&#10;&#10;The project connects to a docker which runs on my personal server" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/fr/ipme/spotifyreview/Main.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
