@@ -19,7 +19,7 @@
       <console name="DB@anonomous.fr" type="STANDARD" schema="database" session="Main"><![CDATA[GRANT ALL privileges ON myspotifydata.* TO 'development'@'%';]]></console>
     </connection>
     <connection id="27b44e2b-4042-4c07-bf44-8eba21ed89b2">
-      <console name="DBDev@Anonomous.fr" type="STANDARD" schema="database" session="Main" />
+      <console name="DBDev@Anonomous.fr" type="STANDARD" schema="myspotifydata" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
