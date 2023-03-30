@@ -63,7 +63,7 @@ public class Album {
         String changedAlbumName = this.getAlbumName().replace("'"," ");
 
         if (this.getPerformer() == null) {
-            System.out.println("Album sans artiste associé. Ne sera donc pas inséré");
+            log.debug("Album sans artiste associé. Ne sera donc pas inséré");
         } else {
             Statement statement = conn.createStatement();
             ResultSet rs = statement.executeQuery("SELECT * FROM albums WHERE albums.name='" + changedAlbumName + "';");
@@ -71,7 +71,7 @@ public class Album {
 
             while (rs.next()) { //If any of the already present in the databasealbums
                 if (rs.getString("name") == this.getPerformer().getArtistName() && rs.getString("name")!="") {
-                    System.out.println("il s'agit du même artiste, l'album ne sera donc pas inséré");
+                    log.debug("il s'agit du même artiste, l'album ne sera donc pas inséré");
                     return 0;
                 } else {
                     oldPerformer += rs.getString("name") + "   |   ";
@@ -79,7 +79,7 @@ public class Album {
             }
             statement = conn.createStatement();
             statement.executeUpdate("INSERT INTO albums(name, artist_id) " + "VALUES ('" + changedAlbumName + "', " + this.getPerformer().getId() + ");");
-            System.out.println("Album inséré avec succès. L'album est disponible avec 2 artistes différents ! Exclu Statify !!! Performed by " + this.getPerformer().getArtistName() + " & by " + oldPerformer);
+            log.debug("Album inséré avec succès. L'album est disponible avec 2 artistes différents ! Exclu Statify !!! Performed by " + this.getPerformer().getArtistName() + " & by " + oldPerformer);
             return 0;
         }
         return 0;
@@ -95,7 +95,7 @@ public static Album getAlbumByName(String albumName) throws SQLException {
         Album album = null;
         if (rs.next()) {
         album = new Album((Integer) rs.getInt("id"), rs.getString("name"));
-        System.out.println("found album : Album Name : " + rs.getString("name"));
+        log.debug("found album : Album Name : " + rs.getString("name"));
         }
         return album;
         }
@@ -106,7 +106,7 @@ public static Album getAlbumById(Integer id) throws SQLException {
         Album album = null;
         if (rs.next()) {
         album = new Album((Integer) rs.getInt("id"), rs.getString("name"));
-        System.out.println("found album : Album Name : " + rs.getString("name"));
+        log.debug("found album : Album Name : " + rs.getString("name"));
         }
         return album;
         }

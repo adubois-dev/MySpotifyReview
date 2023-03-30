@@ -29,15 +29,15 @@ public class Main {
         conn.setAutoCommit(true);
         PropertyConfigurator.configure(path);
         log.setLevel(Level.DEBUG);
-        System.out.println("Sample debug message");
+        log.debug("Sample debug message");
 
 
-        User user= ParseUserInfos.parseUserInfos();
-        user.insertAsNewUserFromJSON();
-
+//        User user= ParseUserInfos.parseUserInfos();
+//        user.insertAsNewUserFromJSON();
+        User.getUserHistorics("adubois.personnel@gmail.com");
 
     //    ArrayList<Historics> histos= ParseHistorics.parseHistorics();
-        ParsePlaylists.parsePlaylists();
+//        ParsePlaylists.parsePlaylists();
 /*
             for(int i=0;  i<histos.size(); i++)
             {

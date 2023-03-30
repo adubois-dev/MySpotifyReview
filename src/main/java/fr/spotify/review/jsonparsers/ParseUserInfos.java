@@ -19,10 +19,10 @@ import static fr.spotify.review.Main.log;
 public class ParseUserInfos {
 
     public static User parseUserInfos() {
-       System.out.println("Parse User Informations;");
+       log.debug("Parse User Informations;");
         JSONParser parser = new JSONParser();
         JSONObject userInfos = null;
-       System.out.println("Open the Userdata.json File");
+       log.debug("Open the Userdata.json File");
         try {
             userInfos = (JSONObject) parser.parse(new FileReader("RessourcesExterieures/MyData/Userdata.json"));
         } catch (IOException e) {

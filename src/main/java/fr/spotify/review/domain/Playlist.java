@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import static fr.spotify.review.Main.conn;
+import static fr.spotify.review.Main.log;
 
 //@Entity
 //@Table(name = "playlist")
@@ -65,14 +66,14 @@ public class Playlist {
         r.next();
         int count = r.getInt("recordCount");
         r.close();
-        System.out.println("NbLignes == " + count);
+        log.debug("NbLignes == " + count);
         if (count == 0) {
             SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
-            System.out.println(sm.format(this.getLastModifiedDate()));
+            log.debug(sm.format(this.getLastModifiedDate()));
             statement = conn.createStatement();
             statement.executeUpdate("INSERT INTO playlists(name, description, number_of_followers, last_modified_at, user_id) VALUES ('" + changedPlaylistName + "', '" + this.getDescription() +"', " + this.getNumberOfFollowers()+ ", '" + sm.format(this.getLastModifiedDate()) + "', " + this.getUser().getId() + ");");
-            System.out.println("Playlist insérée avec succès");
-        } else System.out.println("Déjà présente dans la base ! On annule ! :)");
+            log.debug("Playlist insérée avec succès");
+        } else log.debug("Déjà présente dans la base ! On annule ! :)");
     }
     public static Playlist getPlaylistByName(String playListName) throws SQLException {
         Statement statement = conn.createStatement();
@@ -81,7 +82,7 @@ public class Playlist {
         Playlist maPL = null;
         if (rs.next()) {
             maPL = new Playlist((Integer) rs.getInt("id"), rs.getString("name"), rs.getDate("last_modified_at"),  rs.getString("description"),  rs.getLong("number_of_followers"), User.getUserById(rs.getInt("user_id")));
-            System.out.println("found playlist : Playlist Name : " + rs.getString("name"));
+            log.debug("found playlist : Playlist Name : " + rs.getString("name"));
         }
         return maPL;
     }

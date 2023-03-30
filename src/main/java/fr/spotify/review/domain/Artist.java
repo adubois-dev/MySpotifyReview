@@ -59,12 +59,12 @@ public class Artist {
         r.next();
         int count = r.getInt("recordCount");
         r.close();
-        System.out.println("NbLignes == " + count);
+        log.debug("NbLignes == " + count);
         if (count == 0) {
             statement = conn.createStatement();
             statement.executeUpdate("INSERT INTO artists(name) VALUES ('" + changedArtistName + "');");
-            System.out.println("Artiste inséré avec succès");
-        } else System.out.println("Cet artiste est déjà présent dans la base");
+            log.debug("Artiste inséré avec succès");
+        } else log.debug("Cet artiste est déjà présent dans la base");
     }
 
     public static Artist getArtistByName(String artistName) throws SQLException {
@@ -74,7 +74,7 @@ public class Artist {
         Artist artist = null;
         if (rs.next()) {
             artist = new Artist((Integer) rs.getInt("id"), rs.getString("name"));
-            System.out.println("found artist : Artist Name : " + rs.getString("name"));
+            log.debug("found artist : Artist Name : " + rs.getString("name"));
         }
         return artist;
     }
@@ -85,7 +85,7 @@ public class Artist {
         Artist artist = null;
         if (rs.next()) {
             artist = new Artist((Integer) rs.getInt("id"), rs.getString("name"));
-            System.out.println("found artist : Artist Name : " + rs.getString("name"));
+            log.debug("found artist : Artist Name : " + rs.getString("name"));
         }
         return artist;
     }

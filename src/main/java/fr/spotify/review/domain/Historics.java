@@ -112,7 +112,7 @@ public class Historics {
             SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
             Statement statement = conn.createStatement();
             statement.executeUpdate("INSERT INTO historics(user_id, artist_id, track_id, ms_played, end_time) VALUES (" + this.getUser().getId() + ", " + this.getArtist().getId() + ", " + this.getTrack().getId() + ", " + msplayed + ", '" + sm.format(this.listeningDate) + "');");
-            System.out.println("Historique musical inséré avec succès");
+            log.debug("Historique musical inséré avec succès");
 
     }
 
@@ -123,12 +123,12 @@ public class Historics {
         r.next();
         int count = r.getInt("recordCount");
         r.close();
-        System.out.println("NbLignes == " + count);
+        log.debug("NbLignes == " + count);
         if (count == 0) {
-            System.out.println("Table réinitialisée avec succès");
+            log.debug("Table réinitialisée avec succès");
         }
         else {
-            System.out.println("La table n'a pas été correctement réinitialisée");
+            log.debug("La table n'a pas été correctement réinitialisée");
 
         }
         }

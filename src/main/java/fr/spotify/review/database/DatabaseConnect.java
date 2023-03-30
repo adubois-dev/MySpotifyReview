@@ -16,14 +16,14 @@ public class DatabaseConnect {
 
     {
         Connection connection=null;
-        System.out.println("CONNECT TO MariaDB. IT WORKS !!!");
+        log.debug("CONNECT TO MariaDB. IT WORKS !!!");
         try {
             connection = DriverManager.getConnection("jdbc:mariadb://anonomous.fr:3307/myspotifydata", "development", "IgKe7xexdPtZp4ZbF0VbG2dwH8mbI24EZ1buStINgT");
         } catch (
                 SQLException e) {
             throw new RuntimeException(e);
         }
-        System.out.println("Connected to the  database");
+        log.debug("Connected to the  database");
     return connection;
     }
 public static void instantiatePMF() {

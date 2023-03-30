@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import static fr.spotify.review.Main.conn;
@@ -20,26 +21,50 @@ public class User {
     private Integer id;
     public String userName;
     public String password;
-    public   String email;
+    public String email;
     public String spotifyUserName;
     public String country;
     public String gender;
     public Date birthdate;
     public Date creationTime;
 
+/*    public static ArrayList<ResultMostPlayed> getUserMostPlayed(String email) throws SQLException {
+        User user = getUserByEmail(email);
+        Statement statement = conn.createStatement();
+
+        while(r.hasNext){
+
+        }
+    }*/
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", spotifyUserName='" + spotifyUserName + '\'' +
+                ", country='" + country + '\'' +
+                ", gender='" + gender + '\'' +
+                ", birthdate=" + birthdate +
+                ", creationTime=" + creationTime +
+                '}';
+    }
+
     public User(String userName, String email) {
-        System.out.println("We will send him a temporary password by email at his first inscription");
+        log.debug("We will send him a temporary password by email at his first inscription");
         this.userName = userName;
         this.email = email;
     }
 
     public User(Integer id, String email) {
-        System.out.println("We will send him a temporary password by email at his first inscription");
+        log.debug("We will send him a temporary password by email at his first inscription");
         this.id = id;
         this.email = email;
     }
     public User(String email) {
-        System.out.println("We will send him a temporary password by email at his first inscription");
+        log.debug("We will send him a temporary password by email at his first inscription");
         this.email = email;
     }
 
@@ -68,20 +93,20 @@ public class User {
     public void insertAsNewUserFromJSON() throws SQLException {
         Statement statement = conn.createStatement();
 
-        System.out.println("On trie sur le champ email puisqu'il s'agit du seul champ unique que l'on a à la fois lors d'une inscription et lors d'un import de données.");
+        log.debug("On trie sur le champ email puisqu'il s'agit du seul champ unique que l'on a à la fois lors d'une inscription et lors d'un import de données.");
 
         ResultSet r = statement.executeQuery("SELECT COUNT(*) AS recordCount FROM users WHERE users.email='" + this.getEmail() + "';");
         r.next();
         int count = r.getInt("recordCount");
         r.close();
-        System.out.println("NbLignes == " + count);
+        log.debug("NbLignes == " + count);
         if (count == 0) {
             statement = conn.createStatement();
             SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
             statement.executeUpdate("INSERT INTO users(email, spotify_username, country, gender, birthdate, creationTime) VALUES ('" + this.getEmail() + "', '" + this.getSpotifyUserName()  + "', '" + this.getCountry() + "', '" + this.getGender() + "', DATE '" + sm.format(this.birthdate)  + "', DATE '" + sm.format(this.getCreationTime()) + "') ;");
-            System.out.println("Nouvel utilisateur inséré avec succès");
+            log.debug("Nouvel utilisateur inséré avec succès");
             conn.commit();
-       } else System.out.println("Un utilisateur avec le même email est déjà présent dans la base");
+       } else log.debug("Un utilisateur avec le même email est déjà présent dans la base");
     }
 
 
@@ -104,7 +129,17 @@ public class User {
         }
         return user;
     }
-
+    public static ArrayList<Historics> getUserHistorics(String email) throws SQLException {
+        ArrayList<Historics> returnInstance = new ArrayList<Historics>();
+        User user = getUserByEmail(email);
+        Statement statement = conn.createStatement();
+        ResultSet rs = statement.executeQuery("SELECT * FROM historics WHERE user_id=" + user.getId() + ";");
+        while(rs.next())
+        {
+            returnInstance.add(new Historics((Integer) rs.getInt("id"), Artist.getArtistById(rs.getInt("artist_id")),Track.getTrackById((Integer) rs.getInt("track_id")),user, rs.getLong("ms_played"), rs.getDate("end_time")));
+        }
+    return returnInstance;
+    }
 
 //Getters and Setters
 

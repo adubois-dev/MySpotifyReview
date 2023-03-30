@@ -32,17 +32,7 @@ public class ParsePlaylists {
             throw new RuntimeException(e);
         }
         ArrayList<Historics> historyList = new ArrayList<Historics>();
-        //Parse it
-
-
-
-
-
-
-
-
-
-
+        //Parse i
         int len = playlists.size();
 
         for (int i = 0; i < len; i++) {

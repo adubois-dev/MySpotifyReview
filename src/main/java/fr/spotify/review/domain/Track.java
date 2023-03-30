@@ -17,8 +17,14 @@ public class Track {
     public Integer episode;
     public Boolean localtrack;
 
-
-
+    public Track(Integer id, String trackName, Album album, String trackURI, Integer episode, Boolean localtrack) {
+        this.id = id;
+        this.trackName = trackName;
+        this.album = album;
+        this.trackURI = trackURI;
+        this.episode = episode;
+        this.localtrack = localtrack;
+    }
 
     public Track(String trackName) {
         this.trackName=trackName;
@@ -93,12 +99,12 @@ public class Track {
         rs.next();
         int count = rs.getInt("recordCount");
         rs.close();
-        System.out.println("NbLignes == " + count);
+        log.debug("NbLignes == " + count);
         if (count == 0) {
             statement = conn.createStatement();
             statement.executeUpdate("INSERT INTO tracks(name) VALUES ('" + changedTrackName + "');");
-            System.out.println("Track insérée avec succès");
-        } else System.out.println("Cette track est déjà présente dans la base");
+            log.debug("Track insérée avec succès");
+        } else log.debug("Cette track est déjà présente dans la base");
     }
 
     public void updateTrackInfo() throws SQLException {
@@ -108,16 +114,16 @@ public class Track {
         rs.next();
         int count = rs.getInt("recordCount");
         rs.close();
-        System.out.println("NbLignes == " + count);
+        log.debug("NbLignes == " + count);
         if (count == 0) {
             statement = conn.createStatement();
             statement.executeUpdate("INSERT INTO tracks(name, album_id, local_track, uri, episode) VALUES ('" + changedTrackName + "', " + this.getAlbum().getId()  + ", " + this.getLocaltrack() + ", '" + this.getUri() + "', " + this.getEpisode() + ");");
-            System.out.println("Track insérée avec succès");
+            log.debug("Track insérée avec succès");
         } else
         {
             rs = statement.executeQuery("SELECT * FROM tracks WHERE tracks.name='" + changedTrackName + "';");
             rs.next();
-            System.out.println("Cette track est déjà présente dans la base. On la met à jour.");
+            log.debug("Cette track est déjà présente dans la base. On la met à jour.");
             statement = conn.createStatement();
             statement.executeUpdate("UPDATE tracks SET album_id=" + this.getAlbum().getId()  + ", localtrack=" + this.getLocaltrack() + ", uri='" + this.getUri() + "', episode=" + this.getEpisode() + " WHERE id=" + rs.getInt("id") + ";");
 
@@ -130,7 +136,7 @@ public class Track {
         Track track = null;
         if (rs.next()) {
             track = new Track((Integer) rs.getInt("id"), rs.getString("name"));
-            System.out.println("found track : Track Name : " + rs.getString("name"));
+            log.debug("found track : Track Name : " + rs.getString("name"));
         }
         return track;
     }
@@ -140,9 +146,10 @@ public class Track {
         ResultSet rs = statement.executeQuery("SELECT * FROM tracks WHERE id=" + id + ";");
         Track track = null;
         if (rs.next()) {
-            track = new Track((Integer) rs.getInt("id"), rs.getString("name"));
-            System.out.println("found track : Track Name : " + rs.getString("name"));
+            track = new Track((Integer) rs.getInt("id"), rs.getString("name"), Album.getAlbumById(rs.getInt("album_id")),rs.getString("uri"),rs.getInt("episode"),rs.getBoolean("localtrack"));
+            log.debug("found track : Track Name : " + rs.getString("name"));
         }
+
         return track;
     }
 

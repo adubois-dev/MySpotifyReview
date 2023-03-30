@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import static fr.spotify.review.Main.conn;
+import static fr.spotify.review.Main.log;
 
 //@Entity
 //@Table(name = "track")
@@ -36,13 +37,13 @@ public class PlaylistTrack {
         r.next();
         int count = r.getInt("recordCount");
         r.close();
-        System.out.println("NbLignes == " + count);
+        log.debug("NbLignes == " + count);
         if (count == 0) {
             SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
             statement = conn.createStatement();
             statement.executeUpdate("INSERT INTO playlist_tracks(playlist_id, track_id, added_date) VALUES (" + this.playlist.getId() + ", " + this.track.getId() +", '" + sm.format(this.getAddedDate()) +"');");
-            System.out.println("Playlist insérée avec succès");
-        } else System.out.println("Déjà présente dans la base ! On annule ! :)");
+            log.debug("Playlist insérée avec succès");
+        } else log.debug("Déjà présente dans la base ! On annule ! :)");
     }
 
 
