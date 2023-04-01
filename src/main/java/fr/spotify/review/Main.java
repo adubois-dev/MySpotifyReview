@@ -22,22 +22,21 @@ public class Main {
 
     public static final Logger log = LogManager.getRootLogger();
     public static final Connection conn = DatabaseConnect.databaseConnection();
-    static final String path = "src/resources/log4j.properties";
+//    static final String path = "src/resources/log4j.properties";
 
     public static void main(String[] args) throws SQLException {
 
         conn.setAutoCommit(true);
-        PropertyConfigurator.configure(path);
+//        PropertyConfigurator.configure(path);
         log.setLevel(Level.DEBUG);
-        log.debug("Sample debug message");
 
 
 //        User user= ParseUserInfos.parseUserInfos();
 //        user.insertAsNewUserFromJSON();
-        User.getUserHistorics("adubois.personnel@gmail.com");
-
-    //    ArrayList<Historics> histos= ParseHistorics.parseHistorics();
-//        ParsePlaylists.parsePlaylists();
+//        User.getUserHistorics("adubois.personnel@gmail.com");
+//
+  //      ArrayList<Historics> histos= ParseHistorics.parseHistorics();
+        ParsePlaylists.parsePlaylists();
 /*
             for(int i=0;  i<histos.size(); i++)
             {

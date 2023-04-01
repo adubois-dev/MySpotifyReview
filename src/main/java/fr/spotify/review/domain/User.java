@@ -28,7 +28,7 @@ public class User {
     public Date birthdate;
     public Date creationTime;
 
-/*    public static ArrayList<ResultMostPlayed> getUserMostPlayed(String email) throws SQLException {
+/*    public static ArrayList<OutputMostPlayed> getUserMostPlayed(String email) throws SQLException {
         User user = getUserByEmail(email);
         Statement statement = conn.createStatement();
 
@@ -128,17 +128,6 @@ public class User {
             user = new User(rs.getInt("id"), rs.getString("username"), rs.getString("passwd"),rs.getString("email"), rs.getString("spotify_username"), rs.getString("country"), rs.getString("gender"), rs.getDate("birthDate"), rs.getDate("creationTime"));
         }
         return user;
-    }
-    public static ArrayList<Historics> getUserHistorics(String email) throws SQLException {
-        ArrayList<Historics> returnInstance = new ArrayList<Historics>();
-        User user = getUserByEmail(email);
-        Statement statement = conn.createStatement();
-        ResultSet rs = statement.executeQuery("SELECT * FROM historics WHERE user_id=" + user.getId() + ";");
-        while(rs.next())
-        {
-            returnInstance.add(new Historics((Integer) rs.getInt("id"), Artist.getArtistById(rs.getInt("artist_id")),Track.getTrackById((Integer) rs.getInt("track_id")),user, rs.getLong("ms_played"), rs.getDate("end_time")));
-        }
-    return returnInstance;
     }
 
 //Getters and Setters

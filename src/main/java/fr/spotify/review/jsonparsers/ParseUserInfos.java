@@ -1,8 +1,6 @@
 package fr.spotify.review.jsonparsers;
 
-import fr.spotify.review.domain.Historics;
 import fr.spotify.review.domain.User;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -11,7 +9,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 
 import static fr.spotify.review.Main.log;
