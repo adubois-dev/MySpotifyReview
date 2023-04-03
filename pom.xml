@@ -56,7 +56,7 @@
 		</dependency>
 	</dependencies>
 
-	<build>
+<!--	<build>
 		<plugins>
 			<plugin>
 				<groupId>com.spotify</groupId>
@@ -67,8 +67,8 @@
 				</configuration>
 			</plugin>
 		</plugins>
-	</build>
-<!--<build>
+	</build>-->
+<build>
 	<plugins>
 		<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -84,7 +84,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-	</build>-->
+	</build>
 	<pluginRepositories>
 		<pluginRepository>
 			<id>spring-milestones</id>

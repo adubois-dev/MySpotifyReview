@@ -41,6 +41,6 @@ jobs:
         env :
             image: anonomous/statify
             tags: latest
-            registry: docker.io
+            registry: hub.docker.com
             username: anonomous
             password: dckr_pat_FX4F5XDvB-eCQl0m-eLNR0rYEi8
