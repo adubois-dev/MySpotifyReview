@@ -37,4 +37,4 @@ jobs:
         tags: latest
         registry: docker.io
         username: anonomous
-        password: dckr_pat_FX4F5XDvB-eCQl0m-eLNR0rYEi8
+        password: dckr_pat_hkB-41Bp1eD9fmUog7_EOzOU-lo
