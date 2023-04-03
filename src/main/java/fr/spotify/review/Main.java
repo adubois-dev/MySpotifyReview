@@ -1,21 +1,12 @@
 package fr.spotify.review;
 
 import fr.spotify.review.database.DatabaseConnect;
-import fr.spotify.review.domain.Historics;
-import fr.spotify.review.domain.User;
-import fr.spotify.review.jsonparsers.ParseHistorics;
-import fr.spotify.review.jsonparsers.ParsePlaylists;
-
+import org.apache.log4j.Level;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.ArrayList;
-
-import fr.spotify.review.jsonparsers.ParseUserInfos;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.PropertyConfigurator;
 
 
 public class Main {

@@ -31,28 +31,30 @@ use `myspotifydata`;
 -- --------------------------------------------------------
 
 --
--- Structure de la table `albums`
---
-
-CREATE TABLE IF NOT EXISTS `albums` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
-  `artist_id` int(11) NOT NULL,
-  PRIMARY KEY (id),
-  FOREIGN KEY (artist_id) REFERENCES artists(id)
-) ENGINE=InnoDB;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `artists`
 --
 
 CREATE TABLE IF NOT EXISTS `artists` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) DEFAULT NULL,
+  `name` varchar(250) DEFAULT NULL,
   PRIMARY KEY (id)
 ) ENGINE=InnoDB;
+
+
+- --------------------------------------------------------
+
+--
+-- Structure de la table `albums`
+--
+
+CREATE TABLE IF NOT EXISTS `albums` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(250) NOT NULL,
+  `artist_id` int(11) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (artist_id) REFERENCES artists(id)
+) ENGINE=InnoDB;
+
 
 
 

@@ -1,11 +1,9 @@
 package fr.spotify.review.domain;
 
-import javax.swing.plaf.nimbus.State;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 
 import static fr.spotify.review.Main.CONNECTION;

@@ -3,7 +3,6 @@ package fr.spotify.review.domain;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 
 import static fr.spotify.review.Main.CONNECTION;
 
