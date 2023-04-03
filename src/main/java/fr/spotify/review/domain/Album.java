@@ -78,6 +78,7 @@ public class Album {
             statement = CONNECTION.createStatement();
             statement.executeUpdate("INSERT INTO albums(name, artist_id) " + "VALUES ('" + changedAlbumName + "', " + this.getPerformer().getId() + ");");
             LOGGER.debug("Album inséré avec succès. L'album est disponible avec 2 artistes différents ! Exclu Statify !!! Performed by " + this.getPerformer().getArtistName() + " & by " + oldPerformer);
+            CONNECTION.commit();
             return 0;
         }
         return 0;
