@@ -29,7 +29,13 @@ jobs:
     - name: Build with Maven
       run: mvn clean package --file pom.xml
 
-    - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
+    - name: Buildah push to Docker Hub
+      run: mvn spring-boot:build-image
+      with:
+          image: anonomous/statify
+          tags: latest
+          registry: docker.io
+          username: anonomous
+          password: dckr_pat_FX4F5XDvB-eCQl0m-eLNR0rYEi8
+          extra-args: |
+            --disable-content-trust
