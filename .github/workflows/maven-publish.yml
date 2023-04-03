@@ -31,8 +31,10 @@ jobs:
     - name: Build and push Docker image
       run: mvn spring-boot:build-image
       env :
-            image: anonomous/statify
-            tags: latest
-            registry: docker.io
-            username: anonomous
-            password: dckr_pat_FX4F5XDvB-eCQl0m-eLNR0rYEi8
+        push: true
+        image: anonomous/statify
+        tags: latest
+        registry: docker.io
+        username: anonomous
+        password: dckr_pat_FX4F5XDvB-eCQl0m-eLNR0rYEi8
+    
