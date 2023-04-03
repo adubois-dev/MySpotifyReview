@@ -40,8 +40,7 @@ CREATE TABLE IF NOT EXISTS `artists` (
   PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
-
-- --------------------------------------------------------
+--------------------------------------------------------
 
 --
 -- Structure de la table `albums`

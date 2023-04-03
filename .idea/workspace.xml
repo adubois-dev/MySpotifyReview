@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d9acde2-d5bc-4b46-8889-03e6579d4eef" name="Changes" comment="For tests purpose">
-      <change beforePath="$PROJECT_DIR$/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
+    <list default="true" id="3d9acde2-d5bc-4b46-8889-03e6579d4eef" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/database/DataSourceInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/database/DataSourceInit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/database/DatabaseConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/database/DatabaseConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/Album.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/Artist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/Artist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/Historics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/Historics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/OutputAssessment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/OutputAssessment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/Track.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/Track.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/jsonparsers/ParseHistorics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/jsonparsers/ParseHistorics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/ErrorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/ErrorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/HistoricsInfosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/HistoricsInfosController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/InitDatabaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/InitDatabaseController.java" afterDir="false" />
@@ -257,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680520745713</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="For tests purpose">
+      <created>1680522086752</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1680522086752</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

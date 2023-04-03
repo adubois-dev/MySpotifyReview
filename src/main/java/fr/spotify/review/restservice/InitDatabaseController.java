@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.SQLException;
+import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 public class InitDatabaseController {
