@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `artists` (
 
 CREATE TABLE IF NOT EXISTS `albums` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(250) NOT NULL,
+  `name` varchar(500) NOT NULL,
   `artist_id` int(11) NOT NULL,
   PRIMARY KEY (id),
   FOREIGN KEY (artist_id) REFERENCES artists(id)
