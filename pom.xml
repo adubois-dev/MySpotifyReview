@@ -63,6 +63,10 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<image>
+						<env>
+                            <BPE_APPEND_JAVA_TOOL_OPTIONS>-XX:MaxDirectMemorySize=2048M</BPE_APPEND_JAVA_TOOL_OPTIONS>
+                            <BPE_DELIM_JAVA_TOOL_OPTIONS xml:space="preserve"> </BPE_DELIM_JAVA_TOOL_OPTIONS>
+                        </env>>
 						<name>anonomous/statify</name>
 					</image>
 				</configuration>
