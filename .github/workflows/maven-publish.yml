@@ -28,13 +28,13 @@ jobs:
     - name: Build with Maven
       run: mvn clean package --file pom.xml
 
-    - name: Build and push Docker image
+    - name: Build Docker image
       run: mvn spring-boot:build-image
+    - name: Push Docker Image
+      run: docker push anonomous/statify
       env :
-        push: true
         image: anonomous/statify
         tags: latest
         registry: docker.io
         username: anonomous
         password: dckr_pat_FX4F5XDvB-eCQl0m-eLNR0rYEi8
-    
