@@ -54,24 +54,7 @@ CREATE TABLE IF NOT EXISTS `artists` (
   PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
--- --------------------------------------------------------
 
---
--- Structure de la table `historics`
---
-
-CREATE TABLE IF NOT EXISTS `historics` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) DEFAULT NULL,
-  `end_time` date DEFAULT NULL,
-  `artist_id` int(11) DEFAULT NULL,
-  `track_id` int(11) DEFAULT NULL,
-  `ms_played` double DEFAULT NULL,
-  PRIMARY KEY (id),
-  FOREIGN KEY (user_id) REFERENCES users(id),
-  FOREIGN KEY (artist_id) REFERENCES artists(id),
-  FOREIGN KEY (track_id) REFERENCES tracks(id)
-) ENGINE=InnoDB;
 
 -- --------------------------------------------------------
 
@@ -143,4 +126,23 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (id),
   UNIQUE KEY username(username),
   UNIQUE KEY email(email)
+) ENGINE=InnoDB;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `historics`
+--
+
+CREATE TABLE IF NOT EXISTS `historics` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `end_time` date DEFAULT NULL,
+  `artist_id` int(11) DEFAULT NULL,
+  `track_id` int(11) DEFAULT NULL,
+  `ms_played` double DEFAULT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (artist_id) REFERENCES artists(id),
+  FOREIGN KEY (track_id) REFERENCES tracks(id)
 ) ENGINE=InnoDB;
