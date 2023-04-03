@@ -18,7 +18,8 @@ public class InitDatabaseController {
     @GetMapping("/initDatabase")
     public InitDatabase initDatabase(@RequestParam(value = "email", defaultValue = "adubois.personnel@gmail.com") String email) throws SQLException {
         DataSourceInit.getDataSource();
-        ParseUserInfos.parseUserInfos();
+        User user=ParseUserInfos.parseUserInfos();
+        user.insertAsNewUserFromJSON();
         ParseHistorics.parseHistorics();
         ParsePlaylists.parsePlaylists();
         return new InitDatabase("Success");

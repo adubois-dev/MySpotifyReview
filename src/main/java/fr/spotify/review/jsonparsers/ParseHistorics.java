@@ -11,6 +11,7 @@ import org.json.simple.parser.ParseException;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -24,8 +25,8 @@ public class ParseHistorics {
     public static ArrayList<Historics> parseHistorics() throws SQLException {
 
         LOGGER.debug("Delete all Historics;");
-        Historics.DeleteAllHistos();
         User user = User.getUserByEmail("adubois.personnel@gmail.com");
+        Historics.DeleteAllHistos(user);
         LOGGER.debug("PARSE Historics;");
         JSONParser jsonP = new JSONParser();
         ArrayList<JSONObject> list = new ArrayList<JSONObject>();
@@ -34,7 +35,7 @@ public class ParseHistorics {
         //Open the Files
         for(int i=0;i<4;i++) {
             try {
-                jsonArray = (JSONArray) jsonP.parse(new FileReader("MyData/StreamingHistory" + i + ".json"));
+                jsonArray = (JSONArray) jsonP.parse(new FileReader("/mnt/docker/MyData/StreamingHistory" + i + ".json"));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             } catch (ParseException e) {

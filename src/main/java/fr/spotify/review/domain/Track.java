@@ -102,9 +102,11 @@ public class Track {
         LOGGER.debug("NbLignes == " + count);
         if (count == 0) {
             statement = CONNECTION.createStatement();
+            System.out.println(changedTrackName);
             statement.executeUpdate("INSERT INTO tracks(name) VALUES ('" + changedTrackName + "');");
             LOGGER.debug("Track insérée avec succès");
         } else LOGGER.debug("Cette track est déjà présente dans la base");
+        CONNECTION.commit();
     }
 
     public void updateTrackInfo() throws SQLException {

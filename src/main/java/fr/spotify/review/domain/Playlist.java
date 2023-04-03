@@ -84,6 +84,7 @@ public class Playlist {
             maPL = new Playlist((Integer) rs.getInt("id"), rs.getString("name"), rs.getDate("last_modified_at"),  rs.getString("description"),  rs.getLong("number_of_followers"), User.getUserById(rs.getInt("user_id")));
             LOGGER.debug("found playlist : Playlist Name : " + rs.getString("name"));
         }
+        CONNECTION.commit();
         return maPL;
     }
     @Override

@@ -14,6 +14,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import static fr.spotify.review.Main.CONNECTION;
+
 public class ParsePlaylists {
 
     public static void parsePlaylists() throws SQLException {
@@ -24,7 +26,7 @@ public class ParsePlaylists {
         JSONObject playlist = null;
         //Open the File
         try {
-            playlist = (JSONObject) jsonP.parse(new FileReader("MyData/Playlist1.json"));
+            playlist = (JSONObject) jsonP.parse(new FileReader("/mnt/docker/MyData/Playlist1.json"));
             playlists =(JSONArray) playlist.get("playlists");
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -85,7 +87,8 @@ public class ParsePlaylists {
                 }
 
                 PlaylistTrack singleTrack= new PlaylistTrack(Track.getTrackByName(title.getTrackName()), Playlist.getPlaylistByName(myPlaylist.getName()), addedDate);
-                singleTrack.insertAsNewPlaylistTrack();;
+                singleTrack.insertAsNewPlaylistTrack();
+                CONNECTION.commit();
             }
         }
 

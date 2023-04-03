@@ -4,55 +4,58 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d9acde2-d5bc-4b46-8889-03e6579d4eef" name="Changes" comment="Last Working version">
-      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/InitDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/InitDatabaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/maven-publish.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/maven-publish.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="3d9acde2-d5bc-4b46-8889-03e6579d4eef" name="Changes" comment="For tests purpose">
+      <change afterPath="$PROJECT_DIR$/MyData/DuoNewFamily.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyData/Follow.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyData/Identifiers.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyData/Identity.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyData/Inferences.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyData/Marquee.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyData/Payments.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyData/Playlist1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyData/SearchQueries.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyData/StreamingHistory0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyData/StreamingHistory1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyData/StreamingHistory2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyData/StreamingHistory3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyData/UserAddress.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyData/Userdata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyData/YourLibrary.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ant.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ant.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RessourcesExterieures/MyData/DuoNewFamily.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RessourcesExterieures/MyData/Follow.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RessourcesExterieures/MyData/Identifiers.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RessourcesExterieures/MyData/Identity.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RessourcesExterieures/MyData/Inferences.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RessourcesExterieures/MyData/Marquee.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RessourcesExterieures/MyData/Payments.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RessourcesExterieures/MyData/Playlist1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RessourcesExterieures/MyData/Read_Me_First.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RessourcesExterieures/MyData/SearchQueries.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RessourcesExterieures/MyData/StreamingHistory0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RessourcesExterieures/MyData/StreamingHistory1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RessourcesExterieures/MyData/StreamingHistory2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RessourcesExterieures/MyData/StreamingHistory3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RessourcesExterieures/MyData/UserAddress.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RessourcesExterieures/MyData/Userdata.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RessourcesExterieures/MyData/YourLibrary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/database/DataSourceInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/database/DataSourceInit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/database/DatabaseConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/database/DatabaseConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/Album.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/Artist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/Artist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/Historics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/Historics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/OutputAllHistorics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/OutputAllHistorics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/OutputAssessment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/OutputAssessment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/OutputMostPlayed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/OutputMostPlayed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/Playlist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/PlaylistTrack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/PlaylistTrack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/Track.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/Track.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/jsonparsers/ParseHistorics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/jsonparsers/ParseHistorics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/jsonparsers/ParsePlaylists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/jsonparsers/ParsePlaylists.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/jsonparsers/ParseUserInfos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/jsonparsers/ParseUserInfos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/UserAssessmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/UserAssessmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/UserMostPlayedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/UserMostPlayedController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/ErrorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/ErrorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/InitDatabaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/InitDatabaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/UserInfosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/UserInfosController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MyData/DuoNewFamily.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MyData/Follow.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MyData/Identifiers.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MyData/Identity.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MyData/Inferences.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MyData/Marquee.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MyData/Payments.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MyData/Playlist1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MyData/SearchQueries.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MyData/StreamingHistory0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MyData/StreamingHistory1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MyData/StreamingHistory2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MyData/StreamingHistory3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MyData/UserAddress.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MyData/Userdata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MyData/YourLibrary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/myspotifydata.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/myspotifydata.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,24 +101,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ToolWindowFind.ShowToolbar&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/arnaud/IdeaProjects/MySpotifyReview&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.44367817&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ToolWindowFind.ShowToolbar": "false",
+    "last_opened_file_path": "/home/arnaud/IdeaProjects/MySpotifyReview",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.44367817",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;XML&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "XML"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="fr.ipme.datamodel" />
@@ -258,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680194357795</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="For tests purpose">
+      <created>1680511865822</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680511865822</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -266,7 +280,8 @@
     <MESSAGE value="Reformat Code (domains, database and jsonparsers packages.)&#10;&#10;Added javax.jdo package to pom.xml file in order to start persistency database phase. removed annotations for test purpose with following github java ORM project (which has been a fail) https://github.com/springframeworkguru/springbootwebapp&#10;&#10;JSON Parsers work for StreamingHistory and Playlists.&#10;&#10;JSON files are included inside the project.&#10;&#10;The project CONNECTION.cts to a docker which runs on my personal server" />
     <MESSAGE value="database domains parsers, everything's OK" />
     <MESSAGE value="Added SpringBoot Interface, building of docker image with maven and springboot and a lot of other stuff. Works !" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added SpringBoot Interface, building of docker image with maven and springboot and a lot of other stuff. Works !" />
+    <MESSAGE value="For tests purpose" />
+    <option name="LAST_COMMIT_MESSAGE" value="For tests purpose" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

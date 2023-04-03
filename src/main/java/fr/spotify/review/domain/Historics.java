@@ -113,13 +113,13 @@ public class Historics {
             Statement statement = CONNECTION.createStatement();
             statement.executeUpdate("INSERT INTO historics(user_id, artist_id, track_id, ms_played, end_time) VALUES (" + this.getUser().getId() + ", " + this.getArtist().getId() + ", " + this.getTrack().getId() + ", " + msplayed + ", '" + sm.format(this.listeningDate) + "');");
             LOGGER.debug("Historique musical inséré avec succès");
-
+            CONNECTION.commit();
     }
 
-    public static void DeleteAllHistos() throws SQLException {
+    public static void DeleteAllHistos(User user) throws SQLException {
         Statement statement = CONNECTION.createStatement();
-        statement.executeUpdate("DELETE FROM historics;");
-        ResultSet r = statement.executeQuery("SELECT COUNT(*) AS recordCount FROM historics;");
+        statement.executeUpdate("DELETE FROM historics WHERE historics.user_id=" + user.getId() + ";");
+        ResultSet r = statement.executeQuery("SELECT COUNT(*) AS recordCount FROM historics WHERE historics.user_id=" + user.getId() + ";");
         r.next();
         int count = r.getInt("recordCount");
         r.close();

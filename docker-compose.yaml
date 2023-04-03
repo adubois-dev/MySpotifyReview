@@ -4,12 +4,14 @@ services :
   statify:
     depends_on:
       - statifydb
-    image: statify:latest
+    image: anonomous/statify:latest
     container_name: statifyApp
     links:
      - statifydb:mysql
     ports:
      - "8083:8080"
+    volumes:
+     - ./MyData:/mnt/docker/MyData
   statifydb:
     image: mariadb
     container_name: statifydb

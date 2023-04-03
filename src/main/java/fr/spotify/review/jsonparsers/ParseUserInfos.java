@@ -21,7 +21,7 @@ public class ParseUserInfos {
         JSONObject userInfos = null;
        LOGGER.debug("Open the Userdata.json File");
         try {
-            userInfos = (JSONObject) parser.parse(new FileReader("MyData/Userdata.json"));
+            userInfos = (JSONObject) parser.parse(new FileReader("/mnt/docker/MyData/Userdata.json"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (ParseException e) {

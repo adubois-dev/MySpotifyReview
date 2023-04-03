@@ -15,7 +15,7 @@ public class DatabaseConnect {
         LOGGER.debug("CONNECT TO MariaDB. IT WORKS !!!");
         try {
             DataSourceInit.getDataSource();
-            connection = DriverManager.getConnection("jdbc:mariadb://statifydb/myspotifydata", "development", "IgKe7xexdPtZp4ZbF0VbG2dwH8mbI24EZ1buStINgT");
+            connection = DriverManager.getConnection("jdbc:mariadb://172.20.0.2/myspotifydata", "development", "wUWDRcJTIHfCu4nj3PaWSVB46pvJw70hDItD78v8dJ");
         } catch (
                 SQLException e) {
             throw new RuntimeException(e);

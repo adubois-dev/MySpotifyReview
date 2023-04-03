@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.concurrent.atomic.AtomicLong;
 
 import fr.spotify.review.domain.User;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +14,7 @@ public class UserInfosController {
 
     private final AtomicLong counter = new AtomicLong();
 
+    @CrossOrigin(origins="http://localhost:3000")
     @GetMapping("/userinfos")
     public UserInfos userInfos(@RequestParam(value = "email", defaultValue = "adubois.personnel@gmail.com") String email) {
         String userInfo="";

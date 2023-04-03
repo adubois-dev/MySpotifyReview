@@ -35,8 +35,8 @@ public class Main {
 //        user.insertAsNewUserFromJSON();
 //        User.getUserHistorics("adubois.personnel@gmail.com");
 //
-  //      ArrayList<Historics> histos= ParseHistorics.parseHistorics();
-        ParsePlaylists.parsePlaylists();
+//        ArrayList<Historics> histos= ParseHistorics.parseHistorics();
+//        ParsePlaylists.parsePlaylists();
 /*
             for(int i=0;  i<histos.size(); i++)
             {

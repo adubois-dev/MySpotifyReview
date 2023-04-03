@@ -15,7 +15,8 @@ public class ErrorController {
     private final AtomicLong counter = new AtomicLong();
 
     @GetMapping("/error")
-    public Error userInfos(@RequestParam(value = "email", defaultValue = "adubois.personnel@gmail.com") String email) throws SQLException {
+    public Error error() {
+
         return new Error(counter.incrementAndGet(), "Oops, something went wrong !!! Developers missed some coffees !");
     }
 }
