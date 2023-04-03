@@ -33,8 +33,6 @@ jobs:
     - name: Push Docker Image
       run: docker push anonomous/statify
       env :
-        image: anonomous/statify
         tags: latest
-        registry: docker.io
         username: anonomous
         password: dckr_pat_hkB-41Bp1eD9fmUog7_EOzOU-lo
