@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import static fr.spotify.review.Main.conn;
-import static fr.spotify.review.Main.log;
+import static fr.spotify.review.Main.CONNECTION;
+import static fr.spotify.review.Main.LOGGER;
 
 //import javax.persistence.*;
 //@Entity
@@ -54,38 +54,38 @@ public class Artist {
     public void insertAsNewArtist() throws SQLException {
 
         String changedArtistName = this.getArtistName().replace("'"," ");
-        Statement statement = conn.createStatement();
+        Statement statement = CONNECTION.createStatement();
         ResultSet r = statement.executeQuery("SELECT COUNT(*) AS recordCount FROM artists WHERE artists.name='" + changedArtistName + "';");
         r.next();
         int count = r.getInt("recordCount");
         r.close();
-        log.debug("NbLignes == " + count);
+        LOGGER.debug("NbLignes == " + count);
         if (count == 0) {
-            statement = conn.createStatement();
+            statement = CONNECTION.createStatement();
             statement.executeUpdate("INSERT INTO artists(name) VALUES ('" + changedArtistName + "');");
-            log.debug("Artiste inséré avec succès");
-        } else log.debug("Cet artiste est déjà présent dans la base");
+            LOGGER.debug("Artiste inséré avec succès");
+        } else LOGGER.debug("Cet artiste est déjà présent dans la base");
     }
 
     public static Artist getArtistByName(String artistName) throws SQLException {
-        Statement statement = conn.createStatement();
+        Statement statement = CONNECTION.createStatement();
         String changedArtistName = artistName.replace("'"," ");
         ResultSet rs = statement.executeQuery("SELECT * FROM artists WHERE artists.name='" + changedArtistName + "';");
         Artist artist = null;
         if (rs.next()) {
             artist = new Artist((Integer) rs.getInt("id"), rs.getString("name"));
-            log.debug("found artist : Artist Name : " + rs.getString("name"));
+            LOGGER.debug("found artist : Artist Name : " + rs.getString("name"));
         }
         return artist;
     }
 
     public static Artist getArtistById(Integer id) throws SQLException {
-        Statement statement = conn.createStatement();
+        Statement statement = CONNECTION.createStatement();
         ResultSet rs = statement.executeQuery("SELECT * FROM artists WHERE id=" + id + ";");
         Artist artist = null;
         if (rs.next()) {
             artist = new Artist((Integer) rs.getInt("id"), rs.getString("name"));
-            log.debug("found artist : Artist Name : " + rs.getString("name"));
+            LOGGER.debug("found artist : Artist Name : " + rs.getString("name"));
         }
         return artist;
     }

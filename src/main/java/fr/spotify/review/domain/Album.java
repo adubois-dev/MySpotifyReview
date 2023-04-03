@@ -6,8 +6,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import static fr.spotify.review.Main.conn;
-import static fr.spotify.review.Main.log;
+import static fr.spotify.review.Main.CONNECTION;
+import static fr.spotify.review.Main.LOGGER;
 public class Album {
     //    @Id
 //    @GeneratedValue(strategy = GenerationType.AUTO)
@@ -63,23 +63,23 @@ public class Album {
         String changedAlbumName = this.getAlbumName().replace("'"," ");
 
         if (this.getPerformer() == null) {
-            log.debug("Album sans artiste associé. Ne sera donc pas inséré");
+            LOGGER.debug("Album sans artiste associé. Ne sera donc pas inséré");
         } else {
-            Statement statement = conn.createStatement();
+            Statement statement = CONNECTION.createStatement();
             ResultSet rs = statement.executeQuery("SELECT * FROM albums WHERE albums.name='" + changedAlbumName + "';");
             String oldPerformer="";
 
             while (rs.next()) { //If any of the already present in the databasealbums
                 if (rs.getString("name") == this.getPerformer().getArtistName() && rs.getString("name")!="") {
-                    log.debug("il s'agit du même artiste, l'album ne sera donc pas inséré");
+                    LOGGER.debug("il s'agit du même artiste, l'album ne sera donc pas inséré");
                     return 0;
                 } else {
                     oldPerformer += rs.getString("name") + "   |   ";
                 }
             }
-            statement = conn.createStatement();
+            statement = CONNECTION.createStatement();
             statement.executeUpdate("INSERT INTO albums(name, artist_id) " + "VALUES ('" + changedAlbumName + "', " + this.getPerformer().getId() + ");");
-            log.debug("Album inséré avec succès. L'album est disponible avec 2 artistes différents ! Exclu Statify !!! Performed by " + this.getPerformer().getArtistName() + " & by " + oldPerformer);
+            LOGGER.debug("Album inséré avec succès. L'album est disponible avec 2 artistes différents ! Exclu Statify !!! Performed by " + this.getPerformer().getArtistName() + " & by " + oldPerformer);
             return 0;
         }
         return 0;
@@ -90,23 +90,23 @@ public static Album getAlbumByName(String albumName) throws SQLException {
 
         String changedAlbumName = albumName.replace("'"," ");
 
-        Statement statement = conn.createStatement();
+        Statement statement = CONNECTION.createStatement();
         ResultSet rs = statement.executeQuery("SELECT * FROM albums WHERE albums.name='" + changedAlbumName + "';");
         Album album = null;
         if (rs.next()) {
         album = new Album((Integer) rs.getInt("id"), rs.getString("name"));
-        log.debug("found album : Album Name : " + rs.getString("name"));
+        LOGGER.debug("found album : Album Name : " + rs.getString("name"));
         }
         return album;
         }
 
 public static Album getAlbumById(Integer id) throws SQLException {
-        Statement statement = conn.createStatement();
+        Statement statement = CONNECTION.createStatement();
         ResultSet rs = statement.executeQuery("SELECT * FROM albums WHERE id=" + id + ";");
         Album album = null;
         if (rs.next()) {
         album = new Album((Integer) rs.getInt("id"), rs.getString("name"));
-        log.debug("found album : Album Name : " + rs.getString("name"));
+        LOGGER.debug("found album : Album Name : " + rs.getString("name"));
         }
         return album;
         }

@@ -7,8 +7,8 @@ import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static fr.spotify.review.Main.conn;
-import static fr.spotify.review.Main.log;
+import static fr.spotify.review.Main.CONNECTION;
+import static fr.spotify.review.Main.LOGGER;
 
 //@Entity
 //@Table(name = "playlist")
@@ -61,28 +61,28 @@ public class Playlist {
     public void insertAsNewPlaylist() throws SQLException {
 
         String changedPlaylistName = this.getName().replace("'"," ");
-        Statement statement = conn.createStatement();
+        Statement statement = CONNECTION.createStatement();
         ResultSet r = statement.executeQuery("SELECT COUNT(*) AS recordCount FROM playlists WHERE playlists.name='" + changedPlaylistName + "';");
         r.next();
         int count = r.getInt("recordCount");
         r.close();
-        log.debug("NbLignes == " + count);
+        LOGGER.debug("NbLignes == " + count);
         if (count == 0) {
             SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
-            log.debug(sm.format(this.getLastModifiedDate()));
-            statement = conn.createStatement();
+            LOGGER.debug(sm.format(this.getLastModifiedDate()));
+            statement = CONNECTION.createStatement();
             statement.executeUpdate("INSERT INTO playlists(name, description, number_of_followers, last_modified_at, user_id) VALUES ('" + changedPlaylistName + "', '" + this.getDescription() +"', " + this.getNumberOfFollowers()+ ", '" + sm.format(this.getLastModifiedDate()) + "', " + this.getUser().getId() + ");");
-            log.debug("Playlist insérée avec succès");
-        } else log.debug("Déjà présente dans la base ! On annule ! :)");
+            LOGGER.debug("Playlist insérée avec succès");
+        } else LOGGER.debug("Déjà présente dans la base ! On annule ! :)");
     }
     public static Playlist getPlaylistByName(String playListName) throws SQLException {
-        Statement statement = conn.createStatement();
+        Statement statement = CONNECTION.createStatement();
         String changedPlaylistName = playListName.replace("'"," ");
         ResultSet rs = statement.executeQuery("SELECT * FROM playlists WHERE playlists.name='" + changedPlaylistName + "';");
         Playlist maPL = null;
         if (rs.next()) {
             maPL = new Playlist((Integer) rs.getInt("id"), rs.getString("name"), rs.getDate("last_modified_at"),  rs.getString("description"),  rs.getLong("number_of_followers"), User.getUserById(rs.getInt("user_id")));
-            log.debug("found playlist : Playlist Name : " + rs.getString("name"));
+            LOGGER.debug("found playlist : Playlist Name : " + rs.getString("name"));
         }
         return maPL;
     }

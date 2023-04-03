@@ -20,15 +20,15 @@ import org.apache.log4j.PropertyConfigurator;
 
 public class Main {
 
-    public static final Logger log = LogManager.getRootLogger();
-    public static final Connection conn = DatabaseConnect.databaseConnection();
+    public static final Logger LOGGER = LogManager.getRootLogger();
+    public static final Connection CONNECTION = DatabaseConnect.databaseConnection();
 //    static final String path = "src/resources/log4j.properties";
 
     public static void main(String[] args) throws SQLException {
 
-        conn.setAutoCommit(true);
+        CONNECTION.setAutoCommit(true);
 //        PropertyConfigurator.configure(path);
-        log.setLevel(Level.DEBUG);
+        LOGGER.setLevel(Level.DEBUG);
 
 
 //        User user= ParseUserInfos.parseUserInfos();
@@ -49,6 +49,6 @@ public class Main {
 //        DatabaseConnect.instantiatePMF();
 //        new AlbumDAO().getAllAlbums();
 
-        conn.close();
+        CONNECTION.close();
     }
 }

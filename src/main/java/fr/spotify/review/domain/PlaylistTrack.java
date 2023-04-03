@@ -8,8 +8,8 @@ import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static fr.spotify.review.Main.conn;
-import static fr.spotify.review.Main.log;
+import static fr.spotify.review.Main.CONNECTION;
+import static fr.spotify.review.Main.LOGGER;
 
 //@Entity
 //@Table(name = "track")
@@ -29,7 +29,7 @@ public class PlaylistTrack {
 
     public void insertAsNewPlaylistTrack() throws SQLException {
 
-        Statement statement = conn.createStatement();
+        Statement statement = CONNECTION.createStatement();
         ResultSet r = statement.executeQuery("SELECT COUNT(*) AS recordCount FROM playlist_tracks " +
                 "INNER JOIN playlists ON playlist_tracks.playlist_id=playlists.id " +
                 "INNER JOIN tracks ON tracks.id=playlist_tracks.track_id " +
@@ -37,13 +37,13 @@ public class PlaylistTrack {
         r.next();
         int count = r.getInt("recordCount");
         r.close();
-        log.debug("NbLignes == " + count);
+        LOGGER.debug("NbLignes == " + count);
         if (count == 0) {
             SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
-            statement = conn.createStatement();
+            statement = CONNECTION.createStatement();
             statement.executeUpdate("INSERT INTO playlist_tracks(playlist_id, track_id, added_date) VALUES (" + this.playlist.getId() + ", " + this.track.getId() +", '" + sm.format(this.getAddedDate()) +"');");
-            log.debug("Playlist insérée avec succès");
-        } else log.debug("Déjà présente dans la base ! On annule ! :)");
+            LOGGER.debug("Playlist insérée avec succès");
+        } else LOGGER.debug("Déjà présente dans la base ! On annule ! :)");
     }
 
 

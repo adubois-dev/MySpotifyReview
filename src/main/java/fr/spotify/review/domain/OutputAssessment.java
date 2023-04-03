@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import static fr.spotify.review.Main.conn;
+import static fr.spotify.review.Main.CONNECTION;
 
 public class OutputAssessment {
 
@@ -24,7 +24,7 @@ public class OutputAssessment {
 
     public static OutputAssessment getMostPlayed(String email) throws SQLException {
         OutputAssessment returnInstance = new OutputAssessment();
-        Statement statement = conn.createStatement();
+        Statement statement = CONNECTION.createStatement();
         User user = User.getUserByEmail(email);
         ResultSet rs = statement.executeQuery("SELECT COUNT(*) AS NbScrobbles, SUM(historics.ms_played) AS totalTimePlayed FROM historics WHERE historics.user_id=" + user.getId() + ";");
         rs.next();

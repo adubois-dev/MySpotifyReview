@@ -1,0 +1,21 @@
+version: "3.9"
+
+services :
+  statify:
+    depends_on:
+      - statifydb
+    image: statify:latest
+    container_name: statifyApp
+    links:
+     - statifydb:mysql
+    ports:
+     - "8083:8080"
+  statifydb:
+    image: mariadb
+    container_name: statifydb
+    ports:
+     - "3307:3306"
+    environment:
+     - MYSQL_ROOT_PASSWORD=bcgFyIWpecKBm6tOPgKWY6YjBs4CLlIxNCUIN4MDnpPjNAfphx
+    volumes:
+     - ./database:/mnt/docker/mariadb

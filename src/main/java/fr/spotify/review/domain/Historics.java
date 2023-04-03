@@ -8,8 +8,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-import static fr.spotify.review.Main.conn;
-import static fr.spotify.review.Main.log;
+import static fr.spotify.review.Main.CONNECTION;
+import static fr.spotify.review.Main.LOGGER;
 
 //import javax.persistence.*;
 //
@@ -110,25 +110,25 @@ public class Historics {
         this.getTrack().insertAsNewTrack();
         this.track= Track.getTrackByName(track.getTrackName());
             SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
-            Statement statement = conn.createStatement();
+            Statement statement = CONNECTION.createStatement();
             statement.executeUpdate("INSERT INTO historics(user_id, artist_id, track_id, ms_played, end_time) VALUES (" + this.getUser().getId() + ", " + this.getArtist().getId() + ", " + this.getTrack().getId() + ", " + msplayed + ", '" + sm.format(this.listeningDate) + "');");
-            log.debug("Historique musical inséré avec succès");
+            LOGGER.debug("Historique musical inséré avec succès");
 
     }
 
     public static void DeleteAllHistos() throws SQLException {
-        Statement statement = conn.createStatement();
+        Statement statement = CONNECTION.createStatement();
         statement.executeUpdate("DELETE FROM historics;");
         ResultSet r = statement.executeQuery("SELECT COUNT(*) AS recordCount FROM historics;");
         r.next();
         int count = r.getInt("recordCount");
         r.close();
-        log.debug("NbLignes == " + count);
+        LOGGER.debug("NbLignes == " + count);
         if (count == 0) {
-            log.debug("Table réinitialisée avec succès");
+            LOGGER.debug("Table réinitialisée avec succès");
         }
         else {
-            log.debug("La table n'a pas été correctement réinitialisée");
+            LOGGER.debug("La table n'a pas été correctement réinitialisée");
 
         }
         }

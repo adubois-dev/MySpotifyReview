@@ -11,17 +11,17 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static fr.spotify.review.Main.log;
+import static fr.spotify.review.Main.LOGGER;
 
 public class ParseUserInfos {
 
     public static User parseUserInfos() {
-       log.debug("Parse User Informations;");
+       LOGGER.debug("Parse User Informations;");
         JSONParser parser = new JSONParser();
         JSONObject userInfos = null;
-       log.debug("Open the Userdata.json File");
+       LOGGER.debug("Open the Userdata.json File");
         try {
-            userInfos = (JSONObject) parser.parse(new FileReader("RessourcesExterieures/MyData/Userdata.json"));
+            userInfos = (JSONObject) parser.parse(new FileReader("MyData/Userdata.json"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (ParseException e) {

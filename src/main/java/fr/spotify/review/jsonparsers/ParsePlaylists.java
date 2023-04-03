@@ -24,7 +24,7 @@ public class ParsePlaylists {
         JSONObject playlist = null;
         //Open the File
         try {
-            playlist = (JSONObject) jsonP.parse(new FileReader("RessourcesExterieures/MyData/Playlist1.json"));
+            playlist = (JSONObject) jsonP.parse(new FileReader("MyData/Playlist1.json"));
             playlists =(JSONArray) playlist.get("playlists");
         } catch (IOException e) {
             throw new RuntimeException(e);

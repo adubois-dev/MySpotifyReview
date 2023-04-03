@@ -14,7 +14,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicLong;
 
-import static fr.spotify.review.Main.conn;
+import static fr.spotify.review.Main.CONNECTION;
 
 @RestController
 public class UserMostPlayedController {

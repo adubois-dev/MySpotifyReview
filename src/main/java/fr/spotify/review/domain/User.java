@@ -11,8 +11,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-import static fr.spotify.review.Main.conn;
-import static fr.spotify.review.Main.log;
+import static fr.spotify.review.Main.CONNECTION;
+import static fr.spotify.review.Main.LOGGER;
 
 
 public class User {
@@ -30,7 +30,7 @@ public class User {
 
 /*    public static ArrayList<OutputMostPlayed> getUserMostPlayed(String email) throws SQLException {
         User user = getUserByEmail(email);
-        Statement statement = conn.createStatement();
+        Statement statement = CONNECTION.createStatement();
 
         while(r.hasNext){
 
@@ -53,18 +53,18 @@ public class User {
     }
 
     public User(String userName, String email) {
-        log.debug("We will send him a temporary password by email at his first inscription");
+        LOGGER.debug("We will send him a temporary password by email at his first inscription");
         this.userName = userName;
         this.email = email;
     }
 
     public User(Integer id, String email) {
-        log.debug("We will send him a temporary password by email at his first inscription");
+        LOGGER.debug("We will send him a temporary password by email at his first inscription");
         this.id = id;
         this.email = email;
     }
     public User(String email) {
-        log.debug("We will send him a temporary password by email at his first inscription");
+        LOGGER.debug("We will send him a temporary password by email at his first inscription");
         this.email = email;
     }
 
@@ -91,27 +91,27 @@ public class User {
 
 
     public void insertAsNewUserFromJSON() throws SQLException {
-        Statement statement = conn.createStatement();
+        Statement statement = CONNECTION.createStatement();
 
-        log.debug("On trie sur le champ email puisqu'il s'agit du seul champ unique que l'on a à la fois lors d'une inscription et lors d'un import de données.");
+        LOGGER.debug("On trie sur le champ email puisqu'il s'agit du seul champ unique que l'on a à la fois lors d'une inscription et lors d'un import de données.");
 
         ResultSet r = statement.executeQuery("SELECT COUNT(*) AS recordCount FROM users WHERE users.email='" + this.getEmail() + "';");
         r.next();
         int count = r.getInt("recordCount");
         r.close();
-        log.debug("NbLignes == " + count);
+        LOGGER.debug("NbLignes == " + count);
         if (count == 0) {
-            statement = conn.createStatement();
+            statement = CONNECTION.createStatement();
             SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
             statement.executeUpdate("INSERT INTO users(email, spotify_username, country, gender, birthdate, creationTime) VALUES ('" + this.getEmail() + "', '" + this.getSpotifyUserName()  + "', '" + this.getCountry() + "', '" + this.getGender() + "', DATE '" + sm.format(this.birthdate)  + "', DATE '" + sm.format(this.getCreationTime()) + "') ;");
-            log.debug("Nouvel utilisateur inséré avec succès");
-            conn.commit();
-       } else log.debug("Un utilisateur avec le même email est déjà présent dans la base");
+            LOGGER.debug("Nouvel utilisateur inséré avec succès");
+            CONNECTION.commit();
+       } else LOGGER.debug("Un utilisateur avec le même email est déjà présent dans la base");
     }
 
 
     public static User getUserByEmail(String userMail) throws SQLException {
-        Statement statement = conn.createStatement();
+        Statement statement = CONNECTION.createStatement();
         ResultSet rs = statement.executeQuery("SELECT * FROM users WHERE users.email='" + userMail + "';");
         User user = null;
         if (rs.next()) {
@@ -121,7 +121,7 @@ public class User {
     }
 
     public static User getUserById(Integer id) throws SQLException {
-        Statement statement = conn.createStatement();
+        Statement statement = CONNECTION.createStatement();
         ResultSet rs = statement.executeQuery("SELECT * FROM users WHERE id=" + id + ";");
         User user = null;
         if (rs.next()) {

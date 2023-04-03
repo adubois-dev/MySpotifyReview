@@ -17,16 +17,16 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-import static fr.spotify.review.Main.log;
+import static fr.spotify.review.Main.LOGGER;
 
 public class ParseHistorics {
 
     public static ArrayList<Historics> parseHistorics() throws SQLException {
 
-        log.debug("Delete all Historics;");
+        LOGGER.debug("Delete all Historics;");
         Historics.DeleteAllHistos();
         User user = User.getUserByEmail("adubois.personnel@gmail.com");
-        log.debug("PARSE Historics;");
+        LOGGER.debug("PARSE Historics;");
         JSONParser jsonP = new JSONParser();
         ArrayList<JSONObject> list = new ArrayList<JSONObject>();
         JSONArray jsonArray = null;
@@ -34,7 +34,7 @@ public class ParseHistorics {
         //Open the Files
         for(int i=0;i<4;i++) {
             try {
-                jsonArray = (JSONArray) jsonP.parse(new FileReader("RessourcesExterieures/MyData/StreamingHistory" + i + ".json"));
+                jsonArray = (JSONArray) jsonP.parse(new FileReader("MyData/StreamingHistory" + i + ".json"));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             } catch (ParseException e) {
@@ -47,7 +47,7 @@ public class ParseHistorics {
 
                 Artist artist = new Artist((String) jsonO.get("artistName"));
                 Track title = new Track((String) jsonO.get("trackName"));
-                log.debug(title.getTrackName());
+                LOGGER.debug(title.getTrackName());
                 Long msplayed = (Long) jsonO.get("msPlayed");
                 DateFormat parseFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
                 Date date = null;
@@ -59,8 +59,8 @@ public class ParseHistorics {
                 Date listeningDate = date;
                 Historics histo = new Historics(artist, title, user, msplayed, listeningDate);
 //            historyList.add(histo);
-                log.debug(histo.getTrack().getTrackName());
-                //log.debug(histo.toString());
+                LOGGER.debug(histo.getTrack().getTrackName());
+                //LOGGER.debug(histo.toString());
                 histo.insertAsNewHisto();
             }
         }
