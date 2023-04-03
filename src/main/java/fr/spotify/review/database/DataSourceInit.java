@@ -26,7 +26,7 @@ public class DataSourceInit {
         private static DataSource createDataSource() {
             DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
             dataSourceBuilder.driverClassName("org.mariadb.jdbc.Driver");
-            dataSourceBuilder.url("jdbc:mariadb://statifydb:3307");
+            dataSourceBuilder.url("jdbc:mariadb://statifydb");
             dataSourceBuilder.username("root");
             dataSourceBuilder.password("bcgFyIWpecKBm6tOPgKWY6YjBs4CLlIxNCUIN4MDnpPjNAfphx");
             return dataSourceBuilder.build();
