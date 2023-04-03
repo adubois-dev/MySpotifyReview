@@ -28,17 +28,9 @@ jobs:
     - name: Build with Maven
       run: mvn clean package --file pom.xml
 
-  push_to_registry:
-    name: Push Docker image to Docker Hub
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out the repo
-        uses: actions/checkout@v3
-      
-        
-      - name: Build and push Docker image
-        run: mvn spring-boot:build-image
-        env :
+    - name: Build and push Docker image
+      run: mvn spring-boot:build-image
+      env :
             image: anonomous/statify
             tags: latest
             registry: docker.io
