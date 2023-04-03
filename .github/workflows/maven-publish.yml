@@ -23,19 +23,24 @@ jobs:
       with:
         java-version: '20'
         distribution: 'oracle'
-        server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
-        settings-path: ${{ github.workspace }} # location for the settings.xml file
+       
 
     - name: Build with Maven
       run: mvn clean package --file pom.xml
 
-    - name: Buildah push to Docker Hub
-      run: mvn spring-boot:build-image
-      with:
-          image: anonomous/statify
-          tags: latest
-          registry: docker.io
-          username: anonomous
-          password: dckr_pat_FX4F5XDvB-eCQl0m-eLNR0rYEi8
-          extra-args: |
-            --disable-content-trust
+  push_to_registry:
+    name: Push Docker image to Docker Hub
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v3
+      
+        
+      - name: Build and push Docker image
+        run: mvn spring-boot:build-image
+        env :
+            image: anonomous/statify
+            tags: latest
+            registry: docker.io
+            username: anonomous
+            password: dckr_pat_FX4F5XDvB-eCQl0m-eLNR0rYEi8
