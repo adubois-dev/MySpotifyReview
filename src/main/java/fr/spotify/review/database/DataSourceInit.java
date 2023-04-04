@@ -8,9 +8,12 @@ import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 
 import javax.sql.DataSource;
 
+import static fr.spotify.review.Main.LOGGER;
+
 public class DataSourceInit {
 
         public static DataSource getDataSource(){
+            LOGGER.debug("connexion à la base de données");
             DataSource dataSource = createDataSource();
             DatabasePopulatorUtils.execute(createDatabasePopulator(), dataSource);
             return dataSource;
