@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d9acde2-d5bc-4b46-8889-03e6579d4eef" name="Changes" comment="">
+    <list default="true" id="3d9acde2-d5bc-4b46-8889-03e6579d4eef" name="Changes" comment="maven publish XX's try">
       <change beforePath="$PROJECT_DIR$/.github/workflows/maven-publish.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/maven-publish.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -300,7 +301,70 @@
       <option name="project" value="LOCAL" />
       <updated>1680539642883</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="increasedd the length of name field in albums table">
+      <created>1680539867126</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1680539867126</updated>
+    </task>
+    <task id="LOCAL-00017" summary="maven publish XX's try">
+      <created>1680540642410</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1680540642410</updated>
+    </task>
+    <task id="LOCAL-00018" summary="maven publish XX's try">
+      <created>1680541032894</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1680541032894</updated>
+    </task>
+    <task id="LOCAL-00019" summary="maven publish XX's try">
+      <created>1680541146573</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1680541146573</updated>
+    </task>
+    <task id="LOCAL-00020" summary="maven publish XX's try">
+      <created>1680542860239</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1680542860239</updated>
+    </task>
+    <task id="LOCAL-00021" summary="maven publish XX's try">
+      <created>1680543366615</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1680543366615</updated>
+    </task>
+    <task id="LOCAL-00022" summary="maven publish XX's try">
+      <created>1680543819071</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1680543819071</updated>
+    </task>
+    <task id="LOCAL-00023" summary="maven publish XX's try">
+      <created>1680543993483</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1680543993483</updated>
+    </task>
+    <task id="LOCAL-00024" summary="maven publish XX's try">
+      <created>1680590225959</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1680590225959</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -312,7 +376,8 @@
     <MESSAGE value="syntax error in sql file" />
     <MESSAGE value="increasedd the legth of name field in albums table" />
     <MESSAGE value="increasedd the length of name field in albums table" />
-    <option name="LAST_COMMIT_MESSAGE" value="increasedd the length of name field in albums table" />
+    <MESSAGE value="maven publish XX's try" />
+    <option name="LAST_COMMIT_MESSAGE" value="maven publish XX's try" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
