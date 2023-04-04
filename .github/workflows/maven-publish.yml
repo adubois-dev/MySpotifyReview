@@ -45,10 +45,7 @@ jobs:
         registry: docker.io
         repository: anonomous/statify
 
-build:
-  name: Build
-  runs-on: ubuntu-latest
-  steps:
+
     - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@v0.1.8
       with:
