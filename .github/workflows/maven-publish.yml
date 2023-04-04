@@ -46,14 +46,11 @@ jobs:
         repository: anonomous/statify
 
 
-    - name: Run deployment of the Docker App on the server
-      runs-on: ubuntu-latest
-      steps:
-        - name: executing remote ssh commands using password
-          uses: appleboy/ssh-action@v0.1.8
-          with:
-            host: ${{ secrets.HOST }}
-            username: ${{ secrets.SERVER_USERNAME }}
-            password: ${{ secrets.SERVER_PASSWORD }}
-            port: ${{ secrets.PORT }}
-            script: docker-deploy
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@v0.1.8
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.SERVER_USERNAME }}
+        password: ${{ secrets.SERVER_PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: docker-deploy
