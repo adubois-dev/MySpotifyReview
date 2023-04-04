@@ -16,7 +16,7 @@ services :
     image: mariadb
     container_name: statifydb
     ports:
-     - "3307:3306"
+     - "3309:3307"
     environment:
      - MYSQL_ROOT_PASSWORD=bcgFyIWpecKBm6tOPgKWY6YjBs4CLlIxNCUIN4MDnpPjNAfphx
     volumes:

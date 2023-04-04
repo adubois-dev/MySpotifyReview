@@ -14,7 +14,7 @@ public class UserInfosController {
 
     private final AtomicLong counter = new AtomicLong();
 
-    @CrossOrigin(origins="http://localhost:3000")
+    @CrossOrigin(origins="http://localhost:8083")
     @GetMapping("/userinfos")
     public UserInfos userInfos(@RequestParam(value = "email", defaultValue = "adubois.personnel@gmail.com") String email) {
         String userInfo="";

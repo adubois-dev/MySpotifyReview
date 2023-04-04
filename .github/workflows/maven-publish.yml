@@ -53,4 +53,4 @@ jobs:
         username: ${{ secrets.SERVER_USERNAME }}
         password: ${{ secrets.SERVER_PASSWORD }}
         port: ${{ secrets.PORT }}
-        script: docker stop statifyApp; docker rmi anonomous/statify; docker pull anonomous/statify; cd /home/debian/dockerFiles/Statify; sudo docker-compose up -d
+        script: docker stop statifyApp; docker rmi -f anonomous/statify; docker pull anonomous/statify; cd /home/debian/dockerFiles/Statify; sudo docker-compose up -d;
