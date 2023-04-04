@@ -37,9 +37,6 @@ jobs:
        username: ${{ secrets.DOCKERHUB_USERNAME }}
        password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
-#    ‐ name: push
-#    uses: docker/push-action@v1
-#    with:
     - name: Push Docker Image
       run: docker push anonomous/statify
       env:
@@ -56,4 +53,4 @@ jobs:
         username: ${{ secrets.SERVER_USERNAME }}
         password: ${{ secrets.SERVER_PASSWORD }}
         port: ${{ secrets.PORT }}
-        script: docker stop statifyApp; docker rmi anonomous/statify; docker pull anonomous/statify; cd /home/debian/dockerFiles/Statify; sudo docker-compose up -d;
+        script: docker-deploy
