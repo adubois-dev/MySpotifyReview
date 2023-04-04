@@ -377,7 +377,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680591483564</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="maven publish XX's try">
+      <created>1680591956274</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1680591956274</updated>
+    </task>
+    <task id="LOCAL-00028" summary="maven publish XX's try">
+      <created>1680592075077</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1680592075077</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
