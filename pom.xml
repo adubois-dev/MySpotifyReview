@@ -5,7 +5,9 @@
 
 	<groupId>fr.spotify.review</groupId>
 	<artifactId>statify</artifactId>
+	<version>1.0</version>
 	<name>Statify</name>
+	<packaging>jar</packaging>
 	<description>SpotifyReview WebApplication</description>
 	<properties>
 		<java.version>17</java.version>
@@ -16,12 +18,14 @@
 		<version>3.0.5</version>
 	</parent>
 
+<!--
 	<repositories>
 		<repository>
 			<id>jitpack.io</id>
 			<url>https://jitpack.io</url>
 		</repository>
 	</repositories>
+-->
 
 	<dependencies>
 		<dependency>
@@ -47,6 +51,11 @@
 			<artifactId>log4j-1.2-api</artifactId>
 			<version>2.20.0</version>
 		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>LATEST</version>
+		</dependency>
 		<!-- Used for JSON Parsing -->
 		<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
@@ -58,52 +67,18 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>com.spotify</groupId>
-				<artifactId>dockerfile-maven-plugin</artifactId>
-				<version>1.4.8</version>
-				<configuration>
-					<repository>anonomous/${project.artifactId}</repository>
-				</configuration>
-			</plugin>
-			<plugin>
-				<!-- Build an executable JAR -->
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.1.0</version>
-				<configuration>
-					<archive>
-						<manifest>
-							<addClasspath>true</addClasspath>
-							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>com.mypackage.MyClass</mainClass>
-						</manifest>
-					</archive>
-				</configuration>
-			</plugin>&
-		</plugins>
-	</build>
-<!--	<build>
-		<plugins>
-			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<image>
 						<name>anonomous/statify</name>
 					</image>
-					<mainClass>fr.spotify.review.restservice.RestServiceApplication</mainClass>
+					<mainClass>fr.spotify.review.restservice.Statify></mainClass>
 					<layout>JAR</layout>
 				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
-	</build>-->
+	</build>
 	<pluginRepositories>
 		<pluginRepository>
 			<id>spring-milestones</id>

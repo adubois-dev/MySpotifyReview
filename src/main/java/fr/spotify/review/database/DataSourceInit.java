@@ -27,12 +27,12 @@ public class DataSourceInit {
         }
 
         private static DataSource createDataSource() {
-            LOGGER.debug("renseignement des infoos de la base de données");
+            LOGGER.debug("renseignement des infos de la base de données");
             DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
             dataSourceBuilder.driverClassName("org.mariadb.jdbc.Driver");
-            dataSourceBuilder.url("jdbc:mariadb://statifydb");
+            dataSourceBuilder.url("jdbc:mariadb://172.21.0.2");
             dataSourceBuilder.username("root");
-            dataSourceBuilder.password("bcgFyIWpecKBm6tOPgKWY6YjBs4CLlIxNCUIN4MDnpPjNAfphx");
+            dataSourceBuilder.password("qwerty");
             return dataSourceBuilder.build();
         }
     }
