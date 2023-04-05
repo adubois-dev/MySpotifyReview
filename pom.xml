@@ -5,7 +5,6 @@
 
 	<groupId>fr.spotify.review</groupId>
 	<artifactId>statify</artifactId>
-	<version>LATEST</version>
 	<name>Statify</name>
 	<description>SpotifyReview WebApplication</description>
 	<properties>
