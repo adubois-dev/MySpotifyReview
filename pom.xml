@@ -55,7 +55,7 @@
 		</dependency>
 	</dependencies>
 
-<!--	<build>
+	<build>
 		<plugins>
 			<plugin>
 				<groupId>com.spotify</groupId>
@@ -65,9 +65,24 @@
 					<repository>anonomous/${project.artifactId}</repository>
 				</configuration>
 			</plugin>
+			<plugin>
+				<!-- Build an executable JAR -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+							<mainClass>com.mypackage.MyClass</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>&
 		</plugins>
-	</build>-->
-	<build>
+	</build>
+<!--	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -88,7 +103,7 @@
 				</executions>
 			</plugin>
 		</plugins>
-	</build>
+	</build>-->
 	<pluginRepositories>
 		<pluginRepository>
 			<id>spring-milestones</id>
