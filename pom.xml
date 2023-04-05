@@ -5,7 +5,7 @@
 
 	<groupId>fr.spotify.review</groupId>
 	<artifactId>statify</artifactId>
-	<version>1.0</version>
+	<version>LATEST</version>
 	<name>Statify</name>
 	<description>SpotifyReview WebApplication</description>
 	<properties>
@@ -56,7 +56,7 @@
 		</dependency>
 	</dependencies>
 
-	<build>
+<!--	<build>
 		<plugins>
 			<plugin>
 				<groupId>com.spotify</groupId>
@@ -67,24 +67,29 @@
 				</configuration>
 			</plugin>
 		</plugins>
-	</build>
-<!--<build>
-	<plugins>
-		<plugin>
+	</build>-->
+	<build>
+		<plugins>
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<image>
-						<env>
-                            <BPE_APPEND_JAVA_TOOL_OPTIONS>-XX:MaxDirectMemorySize=2048M</BPE_APPEND_JAVA_TOOL_OPTIONS>
-                            <BPE_DELIM_JAVA_TOOL_OPTIONS xml:space="preserve"> </BPE_DELIM_JAVA_TOOL_OPTIONS>
-                        </env>
 						<name>anonomous/statify</name>
 					</image>
+					<mainClass>fr.spotify.review.restservice.RestServiceApplication</mainClass>
+					<layout>JAR</layout>
 				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
-	</build>-->
+	</build>
 	<pluginRepositories>
 		<pluginRepository>
 			<id>spring-milestones</id>
