@@ -1,4 +1,4 @@
-FROM openjdk:17 as builder
+FROM openjdk:17-oracle
 WORKDIR application
 COPY ./pom.xml ./pom.xml
 COPY mvnw .
@@ -10,7 +10,7 @@ RUN ./mvnw dependency:go-offline -B
 RUN ./mvnw clean package && cp target/statify-1.0.jar statify-1.0.jar
 RUN java -Djarmode=layertools -jar statify-1.0.jar extract
 #ENTRYPOINT ["java","-jar", "publish-docker-image-to-docker-hub-1.0-SNAPSHOT.jar"]
-FROM openjdk:17-jre
+FROM openjdk:17-oracle
 WORKDIR application
 COPY – from=builder application/dependencies/ ./
 COPY – from=builder application/spring-boot-loader/ ./

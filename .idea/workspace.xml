@@ -7,8 +7,7 @@
     <list default="true" id="3d9acde2-d5bc-4b46-8889-03e6579d4eef" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/database/DataSourceInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/database/DataSourceInit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,28 +58,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ToolWindowFind.ShowToolbar": "false",
-    "last_opened_file_path": "/home/arnaud/IdeaProjects/Statify",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.44367817",
-    "settings.editor.selected.configurable": "MavenSettings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ToolWindowFind.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/arnaud/IdeaProjects/Statify&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.44367817&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "XML"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;XML&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="fr.ipme.datamodel" />
@@ -98,11 +97,14 @@
       <recent name="$PROJECT_DIR$/src/main" />
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="fr.spotify.review.restservice" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="fr.ipme.datamodel" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RestServiceApplication">
+  <component name="RunManager" selected="Application.Statify">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="fr.spotify.review.domain.album.Application" />
       <module name="MyOwnSpotifyReview" />
@@ -116,12 +118,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="fr.spotify.spotifyreview.Main" />
-      <module name="MyOwnSpotifyReview" />
+    <configuration name="RestServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-20" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="fr.spotify.review.restservice.RestServiceApplication" />
+      <module name="statify" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="fr.spotify.spotifyreview.jsonparsers.*" />
+          <option name="PATTERN" value="fr.spotify.review.restservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -129,10 +133,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RestServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-20" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="fr.spotify.review.restservice.RestServiceApplication" />
+    <configuration name="Statify" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="fr.spotify.review.restservice.Statify" />
       <module name="statify" />
       <extension name="coverage">
         <pattern>
@@ -185,11 +187,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Statify" />
         <item itemvalue="Application.RestServiceApplication" />
         <item itemvalue="Application.fr.spotify.review.Main" />
         <item itemvalue="Application.Application" />
         <item itemvalue="Application.fr.spotify.review.domain.artist.Application" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -433,7 +435,42 @@
       <option name="project" value="LOCAL" />
       <updated>1680609553370</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="maven publish XX's try">
+      <created>1680613948805</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1680613948805</updated>
+    </task>
+    <task id="LOCAL-00035" summary="maven publish XX's try">
+      <created>1680688220533</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1680688220533</updated>
+    </task>
+    <task id="LOCAL-00036" summary="maven publish XX's try">
+      <created>1680688619156</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1680688619156</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Modified /error listener filenames. Added maven wrapper.properties and dockerFile">
+      <created>1680694324574</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1680694324575</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Modified /error listener filenames. Added maven wrapper.properties and dockerFile">
+      <created>1680705327837</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1680705327837</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -446,7 +483,8 @@
     <MESSAGE value="increasedd the legth of name field in albums table" />
     <MESSAGE value="increasedd the length of name field in albums table" />
     <MESSAGE value="maven publish XX's try" />
-    <option name="LAST_COMMIT_MESSAGE" value="maven publish XX's try" />
+    <MESSAGE value="Modified /error listener filenames. Added maven wrapper.properties and dockerFile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified /error listener filenames. Added maven wrapper.properties and dockerFile" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
