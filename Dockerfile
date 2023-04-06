@@ -1,4 +1,4 @@
-FROM openjdk:17-oracle
+FROM openjdk:17-oracle as builder
 WORKDIR application
 COPY ./pom.xml ./pom.xml
 COPY mvnw .
@@ -12,8 +12,8 @@ RUN java -Djarmode=layertools -jar statify-1.0.jar extract
 #ENTRYPOINT ["java","-jar", "publish-docker-image-to-docker-hub-1.0-SNAPSHOT.jar"]
 FROM openjdk:17-oracle
 WORKDIR application
-COPY – from=builder application/dependencies/ ./
-COPY – from=builder application/spring-boot-loader/ ./
-COPY – from=builder application/snapshot-dependencies/ ./
-COPY – from=builder application/application/ ./
+COPY --from=builder application/dependencies/ ./
+COPY --from=builder application/spring-boot-loader/ ./
+COPY --from=builder application/snapshot-dependencies/ ./
+COPY --from=builder application/application/ ./
 ENTRYPOINT ["java", "org.springframework.boot.loader.JarLauncher"]
