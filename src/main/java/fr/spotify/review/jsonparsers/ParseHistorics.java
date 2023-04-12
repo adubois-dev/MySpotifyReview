@@ -1,69 +1,140 @@
 package fr.spotify.review.jsonparsers;
 
-import fr.spotify.review.domain.Artist;
-import fr.spotify.review.domain.Historics;
-import fr.spotify.review.domain.Track;
-import fr.spotify.review.domain.User;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+import fr.spotify.review.entities.*;
+import fr.spotify.review.services.*;
+import org.json.JSONTokener;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 
 import static fr.spotify.review.Main.LOGGER;
 
 public class ParseHistorics {
 
-    public static ArrayList<Historics> parseHistorics() throws SQLException {
 
-        LOGGER.debug("Delete all Historics;");
-        User user = User.getUserByEmail("adubois.personnel@gmail.com");
-        Historics.DeleteAllHistos(user);
-        LOGGER.debug("PARSE Historics;");
-        JSONParser jsonP = new JSONParser();
+
+    public static void parseHistorics(SpotifyUserService spUserServ, HistoricService historics, ArtistService artists, AlbumService albums, TrackService tracks){
+
         ArrayList<JSONObject> list = new ArrayList<JSONObject>();
-        JSONArray jsonArray = null;
-        ArrayList<Historics> historyList = new ArrayList<Historics>();
         //Open the Files
-        for(int i=0;i<4;i++) {
+        JSONTokener jsonTokener = null;
+        for (int i = 0; i < 5; i++) {
             try {
-                jsonArray = (JSONArray) jsonP.parse(new FileReader("/mnt/docker/MyData/StreamingHistory" + i + ".json"));
+                jsonTokener = new JSONTokener((new FileReader("/mnt/docker/MyData/endsong_" + i + ".json")));
             } catch (IOException e) {
                 throw new RuntimeException(e);
-            } catch (ParseException e) {
+            }
+            if (jsonTokener != null) {
+                //Parse it
+                JSONArray jsonArray = new JSONArray(jsonTokener);
+                int len = jsonArray.length();
+                for (int j = 0; j < len; j++) {
+                    JSONObject jsonO = (JSONObject) jsonArray.get(j);
+                    Artist artist = null;
+                    Album album = null;
+                    Track track = null;
+                    Double msplayed = null;
+                    //Checks performed to see if it is a musical scrobble
+                    if (!(jsonO.get("master_metadata_album_artist_name").equals(JSONObject.NULL))) {
+                        String artistName = jsonO.getString("master_metadata_album_artist_name");
+                        if (artists.existsByName(artistName)) {
+                            artist = artists.findByName(artistName);
+                        } else {
+                            artist = new Artist(artistName);
+                            artists.save(artist);
+                        }
+                    }
+                    if (!(jsonO.get("master_metadata_album_album_name").equals(JSONObject.NULL))) {
+                        String albumName = jsonO.getString("master_metadata_album_album_name");
+                        if (albums.existsByName(albumName)) {
+                            album = albums.findByName(albumName);
+                        } else {
+
+                            album = new Album(albumName, artist);
+                            albums.save(album);
+                        }
+                    }
+                    if (!(jsonO.get("master_metadata_track_name").equals(JSONObject.NULL)) && !(jsonO.get("spotify_track_uri").equals(JSONObject.NULL))) {
+                        String trackName = jsonO.getString("master_metadata_track_name");
+                        String trackURI = jsonO.getString("spotify_track_uri");
+                        if (tracks.existsByTrackURI(trackURI)) {
+                            track = tracks.findByTrackURI(trackURI);
+                        } else {
+                            track=new Track(trackName, trackURI, album);
+                            tracks.save(track);
+                        }
+                    }
+
+                    msplayed = jsonO.getDouble("ms_played");
+
+                    DateTimeFormatter formatEntree = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.ENGLISH);
+                    LocalDateTime dateTime = LocalDateTime.parse(jsonO.getString("ts"), formatEntree);
+                    Historic histo = new Historic(album, artist, track, spUserServ.findByUserName(jsonO.getString("username")), msplayed, dateTime);
+                    historics.save(histo);
+                    //LOGGER.debug(histo.toString());
+                }
+            }
+        }
+    }
+ /*   public static ArrayList<Historic> parseHistoricOldVersion(SpotifyUserService spuService, ArtistService artistServ, HistoricService histoServ, ArtistService artistService, TrackService trackService) throws SQLException {
+
+        LOGGER.debug("Delete all Historic;");
+        SpotifyUser spUser = spuService.findSpotifyUserByEmail("adubois.personnel@gmail.com");
+        LOGGER.debug("PARSE Historic;");
+        ArrayList<JSONObject> list = new ArrayList<JSONObject>();
+        ArrayList<Historic> historyList = new ArrayList<Historic>();
+        //Open the Files
+        JSONTokener jsonTokener=null;
+        for(int i=0;i<4;i++) {
+            try {
+                jsonTokener = new JSONTokener((new FileReader("/mnt/docker/MyData/StreamingHistory" + i + ".json")));
+            } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            //Parse it
-            int len = jsonArray.size();
-            for (int j = 0; j < len; j++) {
-                JSONObject jsonO = (JSONObject) jsonArray.get(j);
-
-                Artist artist = new Artist((String) jsonO.get("artistName"));
-                Track title = new Track((String) jsonO.get("trackName"));
-                LOGGER.debug(title.getTrackName());
-                Long msplayed = (Long) jsonO.get("msPlayed");
-                DateFormat parseFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-                Date date = null;
-                try {
-                    date = parseFormat.parse((String) jsonO.get("endTime"));
-                } catch (java.text.ParseException e) {
-                    throw new RuntimeException(e);
-                }
-                Date listeningDate = date;
-                Historics histo = new Historics(artist, title, user, msplayed, listeningDate);
+            if(jsonTokener!=null){
+                //Parse it
+                JSONArray jsonArray=new JSONArray(jsonTokener);
+                int len = jsonArray.length();
+                for (int j = 0; j < len; j++) {
+                    JSONObject jsonO = (JSONObject) jsonArray.get(j);
+                    String trackName=jsonO.getString("trackName");
+                    String artistName=jsonO.getString("artistName");
+                    Artist artist=null;
+                    Track title = null;
+                    if(!artistService.existsByName(artistName)){
+                        artist = new Artist(artistName);
+                        artistService.save(artist);
+                    }
+                    else artist=artistService.findByName(artistName);
+                    if(!trackService.existsByName(trackName)){
+                        title = new Track(trackName);
+                        trackService.save(title);
+                    }
+                    else title=trackService.findByName(trackName);
+                    Double msplayed = jsonO.getDouble("msPlayed");
+                    // parseFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+                    LocalDateTime date = null;
+                    DateTimeFormatter df = new DateTimeFormatterBuilder().appendPattern("yyyy-MM-dd HH:mm").toFormatter(Locale.ENGLISH);
+                    date = date.parse(jsonO.getString("endTime"), df);
+                    LocalDateTime listeningDate = date;
+                    Historic histo = new Historic(artist, title, spUser, msplayed, listeningDate);
 //            historyList.add(histo);
-                LOGGER.debug(histo.getTrack().getTrackName());
-                //LOGGER.debug(histo.toString());
-                histo.insertAsNewHisto();
+                    //LOGGER.debug(histo.toString());
+                    histoServ.save(histo);
+                }
             }
         }
         return historyList;
-    }
+    }*/
 }

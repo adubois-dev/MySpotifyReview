@@ -13,7 +13,6 @@ public class DatabaseConnect {
 
     {
         Connection connection=null;
-        LOGGER.debug("CONNECT TO MariaDB. IT WORKS !!!");
         try {
             DataSourceInit.getDataSource();
             connection = DriverManager.getConnection("jdbc:mariadb://172.21.0.2/myspotifydata", "development", "wUWDRcJTIHfCu4nj3PaWSVB46pvJw70hDItD78v8dJ");
@@ -21,9 +20,6 @@ public class DatabaseConnect {
                 SQLException e) {
             throw new RuntimeException(e);
         }
-        LOGGER.debug("Connected to the  database");
-    return connection;
+        return connection;
     }
-
-
 }

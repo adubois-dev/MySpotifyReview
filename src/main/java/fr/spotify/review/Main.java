@@ -1,6 +1,7 @@
 package fr.spotify.review;
 
 import fr.spotify.review.database.DatabaseConnect;
+import fr.spotify.review.jsonparsers.ParsePlaylists;
 import org.apache.log4j.Level;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -22,9 +23,9 @@ public class Main {
         LOGGER.setLevel(Level.DEBUG);
 
 
-//        User user= ParseUserInfos.parseUserInfos();
-//        user.insertAsNewUserFromJSON();
-//        User.getUserHistorics("adubois.personnel@gmail.com");
+//        SpotifyUser spUser= ParseSpotifyUserInfos.parseSpotifyUserInfos();
+//        spUser.insertAsNewSpotifyUserFromJSON();
+//        SpotifyUser.getSpotifyUserHistorics("adubois.personnel@gmail.com");
 //
 //        ArrayList<Historics> histos= ParseHistorics.parseHistorics();
 //        ParsePlaylists.parsePlaylists();

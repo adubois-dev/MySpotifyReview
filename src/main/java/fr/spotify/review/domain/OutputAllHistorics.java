@@ -1,5 +1,8 @@
 package fr.spotify.review.domain;
 
+import fr.spotify.review.entities.SpotifyUser;
+import fr.spotify.review.services.SpotifyUserService;
+
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,11 +26,11 @@ public String trackName;
     this.trackName= trackName;
     }
 
-    public static ArrayList<OutputAllHistorics> getUserHistorics(String email) throws SQLException {
+    public static ArrayList<OutputAllHistorics> getSpotifyUserHistorics(SpotifyUserService spuServ, String email) throws SQLException {
         ArrayList<OutputAllHistorics> returnInstance = new ArrayList<OutputAllHistorics>();
-        User user = User.getUserByEmail(email);
+        SpotifyUser spUser = spuServ.findSpotifyUserByEmail(email);
         Statement statement = CONNECTION.createStatement();
-        ResultSet rs = statement.executeQuery("SELECT historics.ms_played AS msPlayed, historics.end_time AS datePlayed, historics.user_id AS userId, albums.name AS albumName, artists.name AS Artist, tracks.name AS TrackName FROM historics INNER JOIN tracks ON historics.track_id = tracks.id INNER JOIN albums ON tracks.album_id=albums.id INNER JOIN artists ON artists.id=albums.artist_id WHERE historics.user_id=" + user.getId() + " ORDER BY datePlayed ASC;");
+        ResultSet rs = statement.executeQuery("SELECT historics.ms_played AS msPlayed, historics.end_time AS datePlayed, historics.spUser_id AS spUserId, albums.name AS albumName, artists.name AS Artist, tracks.name AS TrackName FROM historics INNER JOIN tracks ON historics.track_id = tracks.id INNER JOIN albums ON tracks.album_id=albums.id INNER JOIN artists ON artists.id=albums.artist_id WHERE historics.spotify_user_id=" + spUser.getId() + " ORDER BY datePlayed ASC;");
         while(rs.next())
         {
                 returnInstance.add(new OutputAllHistorics( rs.getDouble("msPlayed")/60000,rs.getDate("datePlayed"),rs.getString("albumName"), rs.getString("Artist"), rs.getString("TrackName")));

@@ -11,6 +11,8 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+DROP DATABASE `myspotifydata`;
+
 CREATE DATABASE IF NOT EXISTS `myspotifydata`;
 
 grant all privileges on myspotifydata.* to 'development'@'%' identified by 'wUWDRcJTIHfCu4nj3PaWSVB46pvJw70hDItD78v8dJ';
@@ -27,6 +29,41 @@ flush privileges;
 -- Base de données : `myspotifydata`
 --
 use `myspotifydata`;
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(100) NOT NULL,
+  `username` varchar(100) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+   PRIMARY KEY (id)
+  ) ENGINE=InnoDB;
+
+
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `spotify_user`
+--
+
+CREATE TABLE IF NOT EXISTS `spotify_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(100) NOT NULL,
+  `spotify_username` varchar(100) DEFAULT NULL,
+  `country` varchar(10) DEFAULT NULL,
+  `gender` varchar(10) DEFAULT NULL,
+  `birthdate` date DEFAULT NULL,
+  `creation_time` date DEFAULT NULL,
+  PRIMARY KEY (id),
+  UNIQUE KEY spotify_username(spotify_username),
+  UNIQUE KEY email(email)
+) ENGINE=InnoDB;
+
 
 -- --------------------------------------------------------
 
@@ -40,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `artists` (
   PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
---------------------------------------------------------
+-- ------------------------------------------------------
 
 --
 -- Structure de la table `albums`
@@ -48,13 +85,30 @@ CREATE TABLE IF NOT EXISTS `artists` (
 
 CREATE TABLE IF NOT EXISTS `albums` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(500) NOT NULL,
+  `name` varchar(250) NOT NULL,
   `artist_id` int(11) NOT NULL,
   PRIMARY KEY (id),
   FOREIGN KEY (artist_id) REFERENCES artists(id)
 ) ENGINE=InnoDB;
 
 
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `tracks`
+--
+
+CREATE TABLE IF NOT EXISTS `tracks` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(250) DEFAULT NULL,
+  `album_id` int(11) DEFAULT NULL,
+  `localtrack` boolean DEFAULT NULL,
+  `uri` varchar(100) DEFAULT NULL,
+  `episode` boolean DEFAULT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (album_id) REFERENCES albums(id)
+) ENGINE=InnoDB;
 
 
 -- --------------------------------------------------------
@@ -69,27 +123,13 @@ CREATE TABLE IF NOT EXISTS `playlists` (
   `last_modified_at` date DEFAULT NULL,
   `description` text DEFAULT NULL,
   `number_of_followers` int(11) DEFAULT NULL,
-  `user_id` int(11) DEFAULT NULL,
+  `spotify_user_id` int(11) DEFAULT NULL,
+  `number_of_tracks` int(11) DEFAULT NULL,
+
   PRIMARY KEY (id),
-  FOREIGN KEY (user_id) REFERENCES users(id)
+  FOREIGN KEY (spotify_user_id) REFERENCES spotify_user(id)
 ) ENGINE=InnoDB;
 
--- --------------------------------------------------------
-
---
--- Structure de la table `tracks`
---
-
-CREATE TABLE IF NOT EXISTS `tracks` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(250) DEFAULT NULL,
-  `album_id` int(11) DEFAULT NULL,
-  `localtrack` tinyint(1) DEFAULT NULL,
-  `uri` varchar(100) DEFAULT NULL,
-  `episode` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (id),
-  FOREIGN KEY (album_id) REFERENCES albums(id)
-) ENGINE=InnoDB;
 
 -- --------------------------------------------------------
 
@@ -111,39 +151,20 @@ FOREIGN KEY (track_id) REFERENCES tracks(id)
 -- --------------------------------------------------------
 
 --
--- Structure de la table `users`
---
-
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(100) DEFAULT NULL,
-  `passwd` varchar(100) DEFAULT NULL,
-  `email` varchar(100) NOT NULL,
-  `spotify_username` varchar(100) DEFAULT NULL,
-  `country` varchar(10) DEFAULT NULL,
-  `gender` varchar(10) DEFAULT NULL,
-  `birthdate` date DEFAULT NULL,
-  `creationTime` date DEFAULT NULL,
-  PRIMARY KEY (id),
-  UNIQUE KEY username(username),
-  UNIQUE KEY email(email)
-) ENGINE=InnoDB;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `historics`
 --
 
 CREATE TABLE IF NOT EXISTS `historics` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) DEFAULT NULL,
-  `end_time` date DEFAULT NULL,
+  `spotify_user_id` int(11) DEFAULT NULL,
+  `end_time` datetime DEFAULT NULL,
   `artist_id` int(11) DEFAULT NULL,
   `track_id` int(11) DEFAULT NULL,
-  `ms_played` double DEFAULT NULL,
+  `msplayed` double DEFAULT NULL,
+  `album_id`  int(11) DEFAULT NULL,
   PRIMARY KEY (id),
-  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (spotify_user_id) REFERENCES spotify_user(id),
+  FOREIGN KEY (album_id) REFERENCES albums(id),
   FOREIGN KEY (artist_id) REFERENCES artists(id),
   FOREIGN KEY (track_id) REFERENCES tracks(id)
 ) ENGINE=InnoDB;
