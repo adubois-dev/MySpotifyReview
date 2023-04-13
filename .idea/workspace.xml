@@ -4,41 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d9acde2-d5bc-4b46-8889-03e6579d4eef" name="Changes" comment="Modified /error listener filenames. Added maven wrapper.properties and dockerFile">
-      <change beforePath="$PROJECT_DIR$/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="3d9acde2-d5bc-4b46-8889-03e6579d4eef" name="Changes" comment="Refonte complète du code en mode REST">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/database/DatabaseConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/database/DatabaseConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/Album.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/Artist.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/Historics.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/OutputAllHistorics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/OutputAllHistorics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/OutputAssessment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/OutputAssessment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/OutputMostPlayed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/OutputMostPlayed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/Playlist.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/PlaylistTrack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/Track.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/jsonparsers/ParseHistorics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/jsonparsers/ParseHistorics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/jsonparsers/ParseLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/jsonparsers/ParseLibrary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/jsonparsers/ParsePlaylists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/jsonparsers/ParsePlaylists.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/jsonparsers/ParseUserInfos.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/HistoricsInfos.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/HistoricsInfosController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/InitDatabase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/InitDatabaseController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/Statify.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/StatifyErrorController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/UserAssessment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/UserAssessmentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/UserInfos.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/UserInfosController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/UserMostPlayed.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restservice/UserMostPlayedController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/myspotifydata.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/myspotifydata.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/spotifyapi/SpotifyAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/spotifyapi/SpotifyAPI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -513,7 +481,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680705327837</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Refonte complète du code en mode REST">
+      <created>1681308404996</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1681308404996</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Refonte complète du code en mode REST">
+      <created>1681309085761</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1681309085761</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -527,7 +509,8 @@
     <MESSAGE value="increasedd the length of name field in albums table" />
     <MESSAGE value="maven publish XX's try" />
     <MESSAGE value="Modified /error listener filenames. Added maven wrapper.properties and dockerFile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified /error listener filenames. Added maven wrapper.properties and dockerFile" />
+    <MESSAGE value="Refonte complète du code en mode REST" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refonte complète du code en mode REST" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
