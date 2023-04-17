@@ -5,7 +5,8 @@ import se.michaelthelin.spotify.SpotifyApi;
 
 import java.net.URI;
 
-public class SpotifyAPI {
+public class 
+SpotifyAPI {
 
     public static void spotifyQuery(){
         SpotifyApi spotifyApi = new SpotifyApi.Builder()

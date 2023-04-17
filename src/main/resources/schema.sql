@@ -11,12 +11,7 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-DROP DATABASE `myspotifydata`;
 
-CREATE DATABASE IF NOT EXISTS `myspotifydata`;
-
-grant all privileges on myspotifydata.* to 'development'@'%' identified by 'wUWDRcJTIHfCu4nj3PaWSVB46pvJw70hDItD78v8dJ';
-flush privileges;
 
 
 
@@ -28,7 +23,9 @@ flush privileges;
 --
 -- Base de données : `myspotifydata`
 --
-use `myspotifydata`;
+use `statify`;
+
+DROP TABLE IF EXISTS `historics`, `playlist_tracks`, `tracks`, `playlists`, `spotify_user`, `albums`, `artists`, `user`;
 -- --------------------------------------------------------
 
 --

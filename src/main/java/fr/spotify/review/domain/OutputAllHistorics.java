@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import static fr.spotify.review.Main.CONNECTION;
+//import static fr.spotify.review.Main.CONNECTION;
 
 public class OutputAllHistorics {
 
@@ -26,7 +26,7 @@ public String trackName;
     this.trackName= trackName;
     }
 
-    public static ArrayList<OutputAllHistorics> getSpotifyUserHistorics(SpotifyUserService spuServ, String email) throws SQLException {
+ /*   public static ArrayList<OutputAllHistorics> getSpotifyUserHistorics(SpotifyUserService spuServ, String email) throws SQLException {
         ArrayList<OutputAllHistorics> returnInstance = new ArrayList<OutputAllHistorics>();
         SpotifyUser spUser = spuServ.findSpotifyUserByEmail(email);
         Statement statement = CONNECTION.createStatement();
@@ -36,6 +36,6 @@ public String trackName;
                 returnInstance.add(new OutputAllHistorics( rs.getDouble("msPlayed")/60000,rs.getDate("datePlayed"),rs.getString("albumName"), rs.getString("Artist"), rs.getString("TrackName")));
         }
         return returnInstance;
-    }
+    }*/
 
 }

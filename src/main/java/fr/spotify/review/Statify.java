@@ -11,17 +11,17 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 
-public class StatifyJPA {
+public class Statify {
 
 
 
-        private static final Logger log = LoggerFactory.getLogger(StatifyJPA.class);
+        private static final Logger log = LoggerFactory.getLogger(Statify.class);
 
         public static void main(String[] args) {
-            SpringApplication.run(StatifyJPA.class);
+            SpringApplication.run(Statify.class);
         }
 
-        @Bean
+/*        @Bean
         public CommandLineRunner application(PlaylistTrackService playTrackServ, PlaylistService playlistServ, SpotifyUserService spuService, AlbumService albumServ, HistoricService histoServ, ArtistService artistServ, TrackService trackServ) {
             return (args) -> {
 
@@ -30,7 +30,7 @@ public class StatifyJPA {
                 ParseLibrary.parseLibrary(trackServ, albumServ, artistServ);
                 ParsePlaylists.parsePlaylists(playTrackServ, playlistServ, spuService, albumServ, artistServ, trackServ);
             };
-        }
+        }*/
 
     }
 

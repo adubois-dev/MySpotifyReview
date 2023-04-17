@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import static fr.spotify.review.Main.CONNECTION;
+//import static fr.spotify.review.Main.CONNECTION;
 
 public class OutputAssessment {
 
@@ -24,7 +24,7 @@ public class OutputAssessment {
     }
 
 
-    public static OutputAssessment getAssessment(SpotifyUserService spuServ, String email) throws SQLException {
+ /*   public static OutputAssessment getAssessment(SpotifyUserService spuServ, String email) throws SQLException {
         OutputAssessment returnInstance = new OutputAssessment();
         Statement statement = CONNECTION.createStatement();
         SpotifyUser spUser = spuServ.findSpotifyUserByEmail(email);
@@ -38,5 +38,5 @@ public class OutputAssessment {
         returnInstance.nbTracks=rs.getInt("NbTracks");
         return returnInstance;
 
-    }
+    }*/
 }

@@ -12,7 +12,7 @@ import static fr.spotify.review.Main.LOGGER;
 
 public class DataSourceInit {
 
-        public static DataSource getDataSource(){
+/*        public static DataSource getDataSource(){
             LOGGER.debug("connexion à la base de données");
             DataSource dataSource = createDataSource();
             DatabasePopulatorUtils.execute(createDatabasePopulator(), dataSource);
@@ -30,9 +30,9 @@ public class DataSourceInit {
             LOGGER.debug("renseignement des infos de la base de données");
             DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
             dataSourceBuilder.driverClassName("org.mariadb.jdbc.Driver");
-            dataSourceBuilder.url("jdbc:mariadb://172.21.0.2");
+            dataSourceBuilder.url("jdbc:mariadb://localhost:3309");
             dataSourceBuilder.username("root");
             dataSourceBuilder.password("qwerty");
             return dataSourceBuilder.build();
-        }
+        }*/
     }

@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import static fr.spotify.review.Main.CONNECTION;
+//import static fr.spotify.review.Main.CONNECTION;
 
 public class OutputMostPlayed {
 
@@ -25,7 +25,7 @@ public Integer nbTimesPlayed;
     public Double totalTimePlayed;
 public String albumName, artistName, trackName;
 
-    public static ArrayList<OutputMostPlayed> getMostPlayed(SpotifyUserService spuServ, String email) throws SQLException {
+/*    public static ArrayList<OutputMostPlayed> getMostPlayed(SpotifyUserService spuServ, String email) throws SQLException {
         ArrayList<OutputMostPlayed> returnInstance = new ArrayList<OutputMostPlayed>();
         SpotifyUser spUser = spuServ.findSpotifyUserByEmail(email);
         Statement statement = CONNECTION.createStatement();
@@ -37,5 +37,5 @@ public String albumName, artistName, trackName;
         }
         return returnInstance;
 
-    }
+    }*/
 }

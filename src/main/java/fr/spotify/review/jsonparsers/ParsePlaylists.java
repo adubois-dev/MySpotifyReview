@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import static fr.spotify.review.Main.CONNECTION;
+//import static fr.spotify.review.Main.CONNECTION;
 
 public class ParsePlaylists {
 

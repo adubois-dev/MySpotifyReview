@@ -27,22 +27,22 @@ public class Historic {
 
     private Double msplayed;
 
-    @OneToOne(targetEntity = Artist.class)
+    @ManyToOne(targetEntity = Artist.class)
     @JoinColumn(name="artist_id")
     @JsonView(Views.AlbumResponseView.class)
     private Artist artist;
 
-    @OneToOne(targetEntity = SpotifyUser.class)
+    @ManyToOne(targetEntity = SpotifyUser.class)
     @JoinColumn(name="spotify_user_id")
     @JsonView(Views.AlbumResponseView.class)
     private SpotifyUser user;
 
-    @OneToOne(targetEntity = Track.class)
+    @ManyToOne(targetEntity = Track.class)
     @JoinColumn(name="track_id")
     @JsonView(Views.AlbumResponseView.class)
     private Track track;
 
-    @OneToOne(targetEntity = Album.class)
+    @ManyToOne(targetEntity = Album.class)
     @JoinColumn(name="album_id")
     @JsonView(Views.AlbumResponseView.class)
     private Album album;

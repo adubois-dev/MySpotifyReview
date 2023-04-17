@@ -68,7 +68,7 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
-			<version>LATEST</version>
+			<version>2.5</version>
 		</dependency>
 		<!-- Used for JSON Parsing -->
 		<dependency>
@@ -100,7 +100,7 @@
 					<image>
 						<name>anonomous/statify</name>
 					</image>
-					<mainClass>fr.spotify.review.restservice.Statify></mainClass>
+					<mainClass>fr.spotify.review.Statify></mainClass>
 					<layout>JAR</layout>
 				</configuration>
 			</plugin>

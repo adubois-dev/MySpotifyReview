@@ -1,23 +1,37 @@
 version: "3.3"
 
 services :
+  statifypma:
+    depends_on:
+      - statifydb
+    image: phpmyadmin:latest
+    container_name: statifypma
+    links:
+      - statifydb:db
+    ports:
+      - "8084:80"
   statify:
     depends_on:
       - statifydb
     image: anonomous/statify:latest
     container_name: statifyApp
     links:
-     - statifydb:mysql
+      - statifydb:db
     ports:
-     - "8083:8080"
+      - "8083:8080"
+    environment:
+      - JVM_OPTS=-Xmx8g -Xms8g -XX:MaxPermSize=1024m
     volumes:
-     - ./MyData:/mnt/docker/MyData
+      - ./MyData:/mnt/docker/MyData
   statifydb:
     image: mariadb
     container_name: statifydb
     ports:
-     - "3309:3307"
+      - "3306:3306"
     environment:
-     - MYSQL_ROOT_PASSWORD=bcgFyIWpecKBm6tOPgKWY6YjBs4CLlIxNCUIN4MDnpPjNAfphx
+      - MARIADB_USER=development
+      - MARIADB_PASSWORD=wUWDRcJTIHfCu4nj3PaWSVB46pvJw70hDItD78v8dJ
+      - MARIADB_DATABASE=statify
+      - MARIADB_ROOT_PASSWORD=bcgFyIWpecKBm6tOPgKWY6YjBs4CLlIxNCUIN4MDnpPjNAfphx
     volumes:
-     - ./database:/mnt/docker/mariadb
+      - ./database:/mnt/docker/mariadb

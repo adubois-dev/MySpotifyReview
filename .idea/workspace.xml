@@ -5,8 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d9acde2-d5bc-4b46-8889-03e6579d4eef" name="Changes" comment="Refonte complète du code en mode REST">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/Statify.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/Loading.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/NotGoodToken.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/maven-publish.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/maven-publish.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/StatifyJPA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/controllers/HistoricsInfos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/controllers/HistoricsInfosController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/controllers/InitDatabase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/controllers/InitDatabaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/controllers/InitDatabaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/database/DataSourceInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/database/DataSourceInit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/database/DatabaseConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/database/DatabaseConnect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/OutputAllHistorics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/OutputAllHistorics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/OutputAssessment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/OutputAssessment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/OutputMostPlayed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/OutputMostPlayed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/entities/Historic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/entities/Historic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/jsonparsers/ParsePlaylists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/jsonparsers/ParsePlaylists.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/spotifyapi/SpotifyAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/spotifyapi/SpotifyAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/myspotifydata.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,13 +83,16 @@
     </option>
   </component>
   <component name="ProjectId" id="2NVtRIHvR4bY99LRYqgxWazCrxj" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
     &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
     &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
@@ -74,8 +101,8 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;ToolWindowFind.ShowToolbar&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/arnaud/IdeaProjects/Statify/MyData&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/arnaud/IdeaProjects/Statify&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.44367817&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
@@ -115,20 +142,7 @@
       <recent name="fr.ipme.datamodel" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.StatifyJPA">
-    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="fr.spotify.review.domain.album.Application" />
-      <module name="MyOwnSpotifyReview" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="fr.spotify.review.domain.album.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.fr.spotify.review.Statify">
     <configuration name="RestServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-20" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -183,6 +197,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="fr.spotify.review.Statify" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="fr.spotify.review.Statify" />
+      <module name="statify" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.spotify.review.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="prototype" />
       <method v="2">
@@ -198,11 +225,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.fr.spotify.review.Statify" />
         <item itemvalue="Application.StatifyJPA" />
         <item itemvalue="Application.fr.spotify.review.Main" />
         <item itemvalue="Application.Statify" />
         <item itemvalue="Application.RestServiceApplication" />
-        <item itemvalue="Application.Application" />
       </list>
     </recent_temporary>
   </component>
@@ -499,6 +526,7 @@
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Reformat Code (domains, database and jsonparsers packages.&#10;&#10;Added javax.jdo package to pom.xml file in order to start persistency database phase" />
     <MESSAGE value="Reformat Code (domains, database and jsonparsers packages.)&#10;&#10;Added javax.jdo package to pom.xml file in order to start persistency database phase. removed annotations for test purpose with following github java ORM project (which has been a fail) https://github.com/springframeworkguru/springbootwebapp&#10;&#10;JSON Parsers work for StreamingHistory and Playlists.&#10;&#10;JSON files are included inside the project.&#10;&#10;The project CONNECTION.cts to a docker which runs on my personal server" />
     <MESSAGE value="database domains parsers, everything's OK" />
