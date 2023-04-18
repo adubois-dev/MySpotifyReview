@@ -1,6 +1,9 @@
 version: "3.3"
 
 services :
+  statifyphp:
+    container_name: statifyphp
+    image: php
   statifypma:
     depends_on:
       - statifydb
@@ -13,6 +16,7 @@ services :
   statify:
     depends_on:
       - statifydb
+      - statifyphp
     image: anonomous/statify:latest
     container_name: statifyApp
     links:
