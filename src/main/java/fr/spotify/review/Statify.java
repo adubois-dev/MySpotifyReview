@@ -18,7 +18,8 @@ public class Statify {
         private static final Logger log = LoggerFactory.getLogger(Statify.class);
 
         public static void main(String[] args) {
-            SpringApplication.run(Statify.class);
+            SpringApplication sa = new SpringApplication();
+            sa.run(Statify.class);
         }
 
 /*        @Bean
