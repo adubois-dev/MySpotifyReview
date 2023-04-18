@@ -89,7 +89,7 @@
 					<image>
 						<name>anonomous/statify</name>
 					</image>
-					<mainClass>fr.spotify.review.Statify></mainClass>
+					<mainClass>fr.spotify.review.Statify</mainClass>
 					<layout>JAR</layout>
 				</configuration>
 			</plugin>
