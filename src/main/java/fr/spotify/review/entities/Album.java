@@ -30,6 +30,9 @@ public class Album {
     @JsonView(Views.AlbumResponseView.class)
     private Artist artist;
 
+    @OneToMany(targetEntity = Track.class, mappedBy = "album")
+    private List<Track> tracks = new ArrayList<>();
+
     public Album(String name, Artist artist) {
         this.name = name;
         this.artist=artist;

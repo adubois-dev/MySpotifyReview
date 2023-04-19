@@ -29,18 +29,6 @@ public class Artist {
     private String name;
 
 
-    @OneToMany(targetEntity = Track.class)
-    @JoinTable(
-            name = "historics",
-            joinColumns = @JoinColumn(
-                    name = "artist_id",
-                    referencedColumnName = "id"
-            ),
-            inverseJoinColumns = @JoinColumn(
-                    name = "track_id",
-                    referencedColumnName = "id"
-            ))
-    private List<Track> tracks = new ArrayList<>();
 
     public Artist(String name) {
         this.name = name;

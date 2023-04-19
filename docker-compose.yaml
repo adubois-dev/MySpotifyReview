@@ -10,8 +10,6 @@ services :
       - statifydb:db
     ports:
       - "8084:80"
-    networks:
-      - statifynetwork
   statifyapp:
     depends_on:
       - statifydb
@@ -21,16 +19,11 @@ services :
       - statifydb:app_db
     ports:
       - "8083:8080"
-    environment:
-      - JVM_OPTS=-Xmx8g -Xms8g -XX:MaxPermSize=1024m
     volumes:
       - ./MyData:/mnt/docker/MyData
-    networks:
-      - statifynetwork
   statifydb:
     image: mariadb
     container_name: statifydb
-    hostname: statifydb
     ports:
       - "3309:3306"
     environment:
@@ -40,9 +33,3 @@ services :
       - MARIADB_ROOT_PASSWORD=bcgFyIWpecKBm6tOPgKWY6YjBs4CLlIxNCUIN4MDnpPjNAfphx
     volumes:
       - ./database:/mnt/docker/mariadb
-    networks:
-      - statifynetwork
-
-networks:
-  statifynetwork:
-    driver: bridge

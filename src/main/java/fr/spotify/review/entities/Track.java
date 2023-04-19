@@ -25,7 +25,6 @@ public class Track {
     @JsonView(Views.AlbumResponseView.class)
     private String name;
 
-    @JoinColumn(name="album_id")
     @ManyToOne(targetEntity = Album.class)
     @JsonView(Views.AlbumResponseView.class)
     private Album album;

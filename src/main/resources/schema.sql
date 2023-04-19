@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 --
 use `statify`;
 
-DROP TABLE IF EXISTS `historics`, `playlist_tracks`, `tracks`, `playlists`, `spotify_user`, `albums`, `artists`, `user`;
+-- DROP TABLE IF EXISTS `historics`, `playlist_tracks`, `tracks`, `playlists`, `spotify_user`, `albums`, `artists`, `user`;
 -- --------------------------------------------------------
 
 --
