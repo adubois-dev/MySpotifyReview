@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Entity
 @Table(name="historics")
@@ -24,39 +23,39 @@ public class Historic {
     @JsonView(Views.AlbumResponseView.class)
     private Long id;
 
-
     private Double msplayed;
 
     @ManyToOne(targetEntity = Artist.class)
     @JoinColumn(name="artist_id")
-    @JsonView(Views.AlbumResponseView.class)
+    @JsonView(Views.HistoricsView.class)
     private Artist artist;
 
-    @ManyToOne(targetEntity = SpotifyUser.class)
-    @JoinColumn(name="spotify_user_id")
-    @JsonView(Views.AlbumResponseView.class)
-    private SpotifyUser user;
+    @ManyToOne(targetEntity = User.class)
+    @JoinColumn(name="user_uuid")
+    @JsonView(Views.HistoricsView.class)
+    private User user;
 
     @ManyToOne(targetEntity = Track.class)
     @JoinColumn(name="track_id")
-    @JsonView(Views.AlbumResponseView.class)
+    @JsonView(Views.HistoricsView.class)
     private Track track;
 
     @ManyToOne(targetEntity = Album.class)
     @JoinColumn(name="album_id")
-    @JsonView(Views.AlbumResponseView.class)
+    @JsonView(Views.HistoricsView.class)
     private Album album;
 
-    @JsonView(Views.AlbumResponseView.class)
+    @JsonView(Views.HistoricsView.class)
     @Column(name="end_time")
     private LocalDateTime datePlayed;
 
-    public Historic(Album album, Artist artist, Track track, SpotifyUser user, Double msplayed, LocalDateTime datePlayed) {
+    public Historic(Album album, Artist artist, Track track, User user, Double msplayed, LocalDateTime datePlayed) {
         this.msplayed = msplayed;
         this.artist = artist;
         this.user = user;
         this.track = track;
         this.datePlayed = datePlayed;
-        this.album=album;
+        this.album = album;
     }
+
 }

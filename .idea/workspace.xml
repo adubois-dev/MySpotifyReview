@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d9acde2-d5bc-4b46-8889-03e6579d4eef" name="Changes" comment="Updated maven publish.yml">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/entities/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/entities/Album.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/entities/Artist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/entities/Artist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/entities/Track.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/entities/Track.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restcontrollers/ArtistRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restcontrollers/ArtistRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restcontrollers/TrackRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/restcontrollers/TrackRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/schema.sql" afterDir="false" />
+    <list default="true" id="83ba59dc-313c-4867-8661-342f8f279821" name="Changes" comment="MMMOOOOOOKAAAAAAAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY ! :D">
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/controllers/SpotifyUserRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/controllers/SpotifyUserRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/repositories/SpotifyUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/repositories/SpotifyUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/spotify/review/services/SpotifyUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/spotify/review/services/SpotifyUserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,14 +18,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="XML Properties File" />
+        <option value="JUnit5 Test Class" />
+        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="Git.Rebase.Settings">
-    <option name="NEW_BASE" value="main" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -40,21 +33,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="1abbec40-dacd-40e1-8b40-c716cc912c66" />
-        <option name="url" value="git@github.com:adubois-dev/MySpotifyReview.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
-  <component name="JpbToolWindowState">
-    <option name="isToolWindowVisible" value="false" />
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -62,11 +40,12 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="2NVtRIHvR4bY99LRYqgxWazCrxj" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectId" id="2Ph7i49mzYOoWRcBnPl1CJAGVVB" />
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -76,99 +55,70 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ToolWindowFind.ShowToolbar&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/arnaud/IdeaProjects/regions&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/arnaud/Bureau/Statify&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.44367817&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;XML&quot;
-    ]
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.folding&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;bc2fa2d749c9531c582b4b5e4752d835&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="fr.ipme.datamodel" />
+      <recent name="fr.spotify.review.repositories" />
+      <recent name="fr.spotify.review.services" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/MyData" />
-      <recent name="$PROJECT_DIR$/src/main/java/fr/spotify/review/repositories" />
       <recent name="$PROJECT_DIR$/src/main/java/fr/spotify/review/services" />
+      <recent name="$PROJECT_DIR$/src/main/java/fr/spotify/review/exception" />
       <recent name="$PROJECT_DIR$/src/main/java/fr/spotify/review" />
-      <recent name="$PROJECT_DIR$/src/main/java/fr/spotify/review/domain/album" />
+      <recent name="$PROJECT_DIR$/src/test/resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/RessourcesExterieures" />
-      <recent name="$PROJECT_DIR$/src/main" />
-      <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
-    <key name="ExtractSuperBase.RECENT_KEYS">
-      <recent name="fr.spotify.review.restservice" />
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="fr.spotify.review.repositories" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="fr.spotify.review.restcontrollers" />
+      <recent name="fr.spotify.review.services" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="fr.spotify.review.services" />
-      <recent name="fr.spotify.review.restcontrollers" />
-      <recent name="fr.spotify.review.repositories" />
+      <recent name="fr.spotify.review.entities.tools.searcharray" />
       <recent name="fr.spotify.review.entities" />
-      <recent name="fr.ipme.datamodel" />
+      <recent name="fr.spotify.review.exception" />
+      <recent name="fr.spotify.review.controllers" />
+      <recent name="fr.spotify.review.services" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.fr.spotify.review.Statify">
-    <configuration name="RestServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-20" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="fr.spotify.review.restservice.RestServiceApplication" />
-      <module name="statify" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="fr.spotify.review.entities.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.Statify">
     <configuration name="Statify" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="fr.spotify.review.restservice.Statify" />
-      <module name="statify" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="fr.spotify.review.entities.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StatifyJPA" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="fr.spotify.review.StatifyJPA" />
-      <module name="statify" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="fr.spotify.review.entities.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="fr.spotify.review.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="fr.spotify.review.Main" />
+      <option name="ALTERNATIVE_JRE_PATH" value="OpenJDK" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="fr.spotify.review.Statify" />
       <module name="statify" />
       <extension name="coverage">
         <pattern>
@@ -180,370 +130,259 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="fr.spotify.review.Statify" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="17" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="fr.spotify.review.Statify" />
+    <configuration name="AlbumRestControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Statify" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="fr.spotify.review.*" />
+          <option name="PATTERN" value="fr.spotify.review.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="fr.spotify.review.restcontrollers" />
+      <option name="MAIN_CLASS_NAME" value="fr.spotify.review.restcontrollers.AlbumRestControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="prototype" />
+    <configuration name="AlbumServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Statify" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.spotify.review.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fr.spotify.review.services" />
+      <option name="MAIN_CLASS_NAME" value="fr.spotify.review.services.AlbumServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="prototype" />
-      <option name="filePath" />
+    <configuration name="java in Statify" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Statify" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="java in statify" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="statify" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Statify" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="statify" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="fr.spotify.review.Statify" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.fr.spotify.review.Statify" />
-        <item itemvalue="Application.StatifyJPA" />
-        <item itemvalue="Application.fr.spotify.review.Main" />
+        <item itemvalue="JUnit.java in statify" />
         <item itemvalue="Application.Statify" />
-        <item itemvalue="Application.RestServiceApplication" />
+        <item itemvalue="JUnit.AlbumRestControllerTest" />
+        <item itemvalue="JUnit.java in Statify" />
+        <item itemvalue="JUnit.AlbumServiceTest" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3d9acde2-d5bc-4b46-8889-03e6579d4eef" name="Changes" comment="" />
-      <created>1679761070418</created>
+      <changelist id="83ba59dc-313c-4867-8661-342f8f279821" name="Changes" comment="" />
+      <created>1683897583832</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1679761070418</updated>
+      <updated>1683897583832</updated>
+      <workItem from="1684658523421" duration="524000" />
+      <workItem from="1684662483940" duration="15780000" />
+      <workItem from="1684771148816" duration="14897000" />
+      <workItem from="1684826184542" duration="3434000" />
+      <workItem from="1684835063788" duration="15982000" />
+      <workItem from="1684857485486" duration="11784000" />
+      <workItem from="1684871712149" duration="13310000" />
+      <workItem from="1684925799272" duration="16604000" />
+      <workItem from="1684950046377" duration="7637000" />
+      <workItem from="1684995534364" duration="19732000" />
+      <workItem from="1685024735434" duration="851000" />
+      <workItem from="1685082223519" duration="5784000" />
+      <workItem from="1685103438863" duration="4463000" />
+      <workItem from="1685171152383" duration="599000" />
+      <workItem from="1685256510513" duration="1303000" />
+      <workItem from="1685515121973" duration="2450000" />
+      <workItem from="1685546162764" duration="1000" />
+      <workItem from="1690012136637" duration="18000" />
     </task>
-    <task id="LOCAL-00001" summary="Reformat Code (domains, database and jsonparsers packages.)&#10;&#10;Added javax.jdo package to pom.xml file in order to start persistency database phase. removed annotations for test purpose with following github java ORM project (which has been a fail) https://github.com/springframeworkguru/springbootwebapp&#10;&#10;JSON Parsers work for StreamingHistory and Playlists.&#10;&#10;JSON files are included inside the project.&#10;&#10;The project CONNECTION.cts to a docker which runs on my personal server">
-      <created>1679903188677</created>
+    <task id="LOCAL-00001" summary="Modified Data File. Modified Docker-compose file">
+      <created>1684139627078</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1679903188677</updated>
+      <updated>1684139627078</updated>
     </task>
-    <task id="LOCAL-00002" summary="database domains parsers, everything's OK">
-      <created>1680081848830</created>
+    <task id="LOCAL-00002" summary="Modified Docker-compose file to assign static IP adresses to docker images">
+      <created>1684149652948</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1680081848830</updated>
+      <updated>1684149652948</updated>
     </task>
-    <task id="LOCAL-00003" summary="Added SpringBoot Interface, building of docker image with maven and springboot and a lot of other stuff. Works !">
-      <created>1680194357795</created>
+    <task id="LOCAL-00003" summary="data.sql">
+      <created>1684160550401</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1680194357795</updated>
+      <updated>1684160550401</updated>
     </task>
-    <task id="LOCAL-00004" summary="For tests purpose">
-      <created>1680511865822</created>
+    <task id="LOCAL-00004" summary="Removed initDatabase Controller package, removed Main class, removed SpotifyAPI package&#10;&#10;Created Method to parse endsong\\d&#10;&#10;Improved method parse Historics so that, when it's possible, album isn't NULL">
+      <created>1684224817056</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1680511865822</updated>
+      <updated>1684224817056</updated>
     </task>
-    <task id="LOCAL-00005" summary="For tests purpose">
-      <created>1680519407668</created>
+    <task id="LOCAL-00005" summary="Removed initDatabase Controller package, removed Main class, removed SpotifyAPI package&#10;&#10;Created Method to parse endsong\\d&#10;&#10;Improved method parse Historics so that, when it's possible, album isn't NULL">
+      <created>1684255963104</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1680519407668</updated>
+      <updated>1684255963104</updated>
     </task>
-    <task id="LOCAL-00006" summary="For tests purpose">
-      <created>1680520745713</created>
+    <task id="LOCAL-00006" summary="MOdified docker-compose file to make it compliant with new ANgular stuff">
+      <created>1684256160257</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1680520745713</updated>
+      <updated>1684256160257</updated>
     </task>
-    <task id="LOCAL-00007" summary="For tests purpose">
-      <created>1680522086752</created>
+    <task id="LOCAL-00007" summary="MOdified docker-compose file networks">
+      <created>1684256780759</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1680522086752</updated>
+      <updated>1684256780760</updated>
     </task>
-    <task id="LOCAL-00008" summary="syntax error in sql file">
-      <created>1680522943259</created>
+    <task id="LOCAL-00008" summary="MOdified docker-compose file networks">
+      <created>1684257336334</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1680522943259</updated>
+      <updated>1684257336334</updated>
     </task>
-    <task id="LOCAL-00009" summary="syntax error in sql file">
-      <created>1680525304879</created>
+    <task id="LOCAL-00009" summary="MOdified docker-compose file networks">
+      <created>1684257442826</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1680525304879</updated>
+      <updated>1684257442826</updated>
     </task>
-    <task id="LOCAL-00010" summary="increasedd the length of name field in albums table">
-      <created>1680526447952</created>
+    <task id="LOCAL-00010" summary="MOdified docker-compose file networks">
+      <created>1684257819557</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1680526447952</updated>
+      <updated>1684257819557</updated>
     </task>
-    <task id="LOCAL-00011" summary="increasedd the length of name field in albums table">
-      <created>1680526936488</created>
+    <task id="LOCAL-00011" summary="MOdified docker-compose file networks">
+      <created>1684258030668</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1680526936488</updated>
+      <updated>1684258030668</updated>
     </task>
-    <task id="LOCAL-00012" summary="increasedd the length of name field in albums table">
-      <created>1680528271595</created>
+    <task id="LOCAL-00012" summary="assigned Corentin's files in mMyData">
+      <created>1684289761682</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1680528271595</updated>
+      <updated>1684289761682</updated>
     </task>
-    <task id="LOCAL-00013" summary="increasedd the length of name field in albums table">
-      <created>1680538462909</created>
+    <task id="LOCAL-00013" summary="Made changes for unit tests purpose">
+      <created>1684423658987</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1680538462909</updated>
+      <updated>1684423658987</updated>
     </task>
-    <task id="LOCAL-00014" summary="increasedd the length of name field in albums table">
-      <created>1680539197264</created>
+    <task id="LOCAL-00014" summary="Finished JUnit Tests for Artist's stuff">
+      <created>1684495654528</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1680539197264</updated>
+      <updated>1684495654528</updated>
     </task>
-    <task id="LOCAL-00015" summary="increasedd the length of name field in albums table">
-      <created>1680539642883</created>
+    <task id="LOCAL-00015" summary="Stuff on unit test classes&#10;&#10;[INFO] Tests run: 24, Failures: 0, Errors: 0, Skipped: 0&#10;[INFO] &#10;[INFO] ------------------------------------------------------------------------&#10;[INFO] BUILD SUCCESS&#10;[INFO] --------------------">
+      <created>1684564275142</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1680539642883</updated>
+      <updated>1684564275142</updated>
     </task>
-    <task id="LOCAL-00016" summary="increasedd the length of name field in albums table">
-      <created>1680539867126</created>
+    <task id="LOCAL-00016" summary="MultiUpload OK,&#10;&#10;Login/Register OK">
+      <created>1684676443153</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1680539867126</updated>
+      <updated>1684676443153</updated>
     </task>
-    <task id="LOCAL-00017" summary="maven publish XX's try">
-      <created>1680540642410</created>
+    <task id="LOCAL-00017" summary="MMMOOOOOOKAAAAAAAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY ! :D">
+      <created>1685000743609</created>
       <option name="number" value="00017" />
       <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1680540642410</updated>
+      <updated>1685000743609</updated>
     </task>
-    <task id="LOCAL-00018" summary="maven publish XX's try">
-      <created>1680541032894</created>
+    <task id="LOCAL-00018" summary="MMMOOOOOOKAAAAAAAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY ! :D">
+      <created>1685001116710</created>
       <option name="number" value="00018" />
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1680541032894</updated>
+      <updated>1685001116710</updated>
     </task>
-    <task id="LOCAL-00019" summary="maven publish XX's try">
-      <created>1680541146573</created>
+    <task id="LOCAL-00019" summary="MMMOOOOOOKAAAAAAAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY ! :D">
+      <created>1685001908609</created>
       <option name="number" value="00019" />
       <option name="presentableId" value="LOCAL-00019" />
       <option name="project" value="LOCAL" />
-      <updated>1680541146573</updated>
+      <updated>1685001908609</updated>
     </task>
-    <task id="LOCAL-00020" summary="maven publish XX's try">
-      <created>1680542860239</created>
+    <task id="LOCAL-00020" summary="MMMOOOOOOKAAAAAAAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY ! :D">
+      <created>1685085394545</created>
       <option name="number" value="00020" />
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
-      <updated>1680542860239</updated>
+      <updated>1685085394545</updated>
     </task>
-    <task id="LOCAL-00021" summary="maven publish XX's try">
-      <created>1680543366615</created>
+    <task id="LOCAL-00021" summary="MMMOOOOOOKAAAAAAAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY ! :D">
+      <created>1685085582719</created>
       <option name="number" value="00021" />
       <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
-      <updated>1680543366615</updated>
+      <updated>1685085582719</updated>
     </task>
-    <task id="LOCAL-00022" summary="maven publish XX's try">
-      <created>1680543819071</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1680543819071</updated>
-    </task>
-    <task id="LOCAL-00023" summary="maven publish XX's try">
-      <created>1680543993483</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1680543993483</updated>
-    </task>
-    <task id="LOCAL-00024" summary="maven publish XX's try">
-      <created>1680590225959</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1680590225959</updated>
-    </task>
-    <task id="LOCAL-00025" summary="maven publish XX's try">
-      <created>1680590638856</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1680590638856</updated>
-    </task>
-    <task id="LOCAL-00026" summary="maven publish XX's try">
-      <created>1680591483564</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1680591483564</updated>
-    </task>
-    <task id="LOCAL-00027" summary="maven publish XX's try">
-      <created>1680591956274</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1680591956274</updated>
-    </task>
-    <task id="LOCAL-00028" summary="maven publish XX's try">
-      <created>1680592075077</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1680592075077</updated>
-    </task>
-    <task id="LOCAL-00029" summary="maven publish XX's try">
-      <created>1680599852439</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1680599852439</updated>
-    </task>
-    <task id="LOCAL-00030" summary="maven publish XX's try">
-      <created>1680600265530</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1680600265530</updated>
-    </task>
-    <task id="LOCAL-00031" summary="maven publish XX's try">
-      <created>1680607142361</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1680607142361</updated>
-    </task>
-    <task id="LOCAL-00032" summary="maven publish XX's try">
-      <created>1680608562764</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1680608562764</updated>
-    </task>
-    <task id="LOCAL-00033" summary="maven publish XX's try">
-      <created>1680609553370</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1680609553370</updated>
-    </task>
-    <task id="LOCAL-00034" summary="maven publish XX's try">
-      <created>1680613948805</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1680613948805</updated>
-    </task>
-    <task id="LOCAL-00035" summary="maven publish XX's try">
-      <created>1680688220533</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1680688220533</updated>
-    </task>
-    <task id="LOCAL-00036" summary="maven publish XX's try">
-      <created>1680688619156</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1680688619156</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Modified /error listener filenames. Added maven wrapper.properties and dockerFile">
-      <created>1680694324574</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1680694324575</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Modified /error listener filenames. Added maven wrapper.properties and dockerFile">
-      <created>1680705327837</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1680705327837</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Refonte complète du code en mode REST">
-      <created>1681308404996</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1681308404996</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Refonte complète du code en mode REST">
-      <created>1681309085761</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1681309085761</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Refonte complète du code en mode REST">
-      <created>1681729069771</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1681729069771</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Updated maven publish.yml">
-      <created>1681801565961</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1681801565961</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Updated maven publish.yml">
-      <created>1681810824309</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1681810824309</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Updated maven publish.yml">
-      <created>1681812742620</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1681812742621</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Updated maven publish.yml">
-      <created>1681813933126</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1681813933126</updated>
-    </task>
-    <option name="localTasksCounter" value="46" />
+    <option name="localTasksCounter" value="22" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -557,30 +396,33 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Reformat Code (domains, database and jsonparsers packages.&#10;&#10;Added javax.jdo package to pom.xml file in order to start persistency database phase" />
-    <MESSAGE value="Reformat Code (domains, database and jsonparsers packages.)&#10;&#10;Added javax.jdo package to pom.xml file in order to start persistency database phase. removed annotations for test purpose with following github java ORM project (which has been a fail) https://github.com/springframeworkguru/springbootwebapp&#10;&#10;JSON Parsers work for StreamingHistory and Playlists.&#10;&#10;JSON files are included inside the project.&#10;&#10;The project CONNECTION.cts to a docker which runs on my personal server" />
-    <MESSAGE value="database domains parsers, everything's OK" />
-    <MESSAGE value="Added SpringBoot Interface, building of docker image with maven and springboot and a lot of other stuff. Works !" />
-    <MESSAGE value="For tests purpose" />
-    <MESSAGE value="syntax error in sql file" />
-    <MESSAGE value="increasedd the legth of name field in albums table" />
-    <MESSAGE value="increasedd the length of name field in albums table" />
-    <MESSAGE value="maven publish XX's try" />
-    <MESSAGE value="Modified /error listener filenames. Added maven wrapper.properties and dockerFile" />
-    <MESSAGE value="Refonte complète du code en mode REST" />
-    <MESSAGE value="Updated maven publish.yml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated maven publish.yml" />
+    <MESSAGE value="Modified Data File. Modified Docker-compose file" />
+    <MESSAGE value="Modified Docker-compose file to assign static IP adresses to docker images" />
+    <MESSAGE value="data.sql" />
+    <MESSAGE value="Removed initDatabase Controller package, removed Main class, removed SpotifyAPI package&#10;&#10;Created Method to parse endsong\\d&#10;&#10;Improved method parse Historics so that, when it's possible, album isn't NULL" />
+    <MESSAGE value="MOdified docker-compose file to make it compliant with new ANgular stuff" />
+    <MESSAGE value="MOdified docker-compose file networks" />
+    <MESSAGE value="assigned Corentin's files in mMyData" />
+    <MESSAGE value="Made changes for unit tests purpose" />
+    <MESSAGE value="Finished JUnit Tests for Artist's stuff" />
+    <MESSAGE value="Stuff on unit test classes&#10;&#10;[INFO] Tests run: 24, Failures: 0, Errors: 0, Skipped: 0&#10;[INFO] &#10;[INFO] ------------------------------------------------------------------------&#10;[INFO] BUILD SUCCESS&#10;[INFO] --------------------" />
+    <MESSAGE value="MultiUpload OK,&#10;&#10;Login/Register OK" />
+    <MESSAGE value="MMMOOOOOOKAAAAAAAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY ! :D" />
+    <option name="LAST_COMMIT_MESSAGE" value="MMMOOOOOOKAAAAAAAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY ! :D" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/fr/spotify/spotifyreview/Main.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="fr.spotify.review.entities.Album" memberName="artist" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Statify$ArtistRestControllerTest.ic" NAME="ArtistRestControllerTest Coverage Results" MODIFIED="1684472855550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>fr.spotify.review.restcontrollers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Statify$AlbumServiceTest.ic" NAME="AlbumServiceTest Coverage Results" MODIFIED="1684553283392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>fr.spotify.review.services.*</FILTER>
+    </SUITE>
   </component>
 </project>

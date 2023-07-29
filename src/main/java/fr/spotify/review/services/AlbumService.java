@@ -19,7 +19,7 @@ public class AlbumService {
         this.albumRepository = albumRepository;
     }
 
-    public List<Album> getAll() {
+    public List<Album> findAll() {
         return this.albumRepository.findAll();
     }
 
@@ -30,12 +30,15 @@ public class AlbumService {
     public List<Album> findByNameContains(String name) {
         return this.albumRepository.findByNameContainsIgnoreCase(name);
     }
-    public Album findByName(String name) {
+    public Optional<Album> findByName(String name) {
         return this.albumRepository.findByName(name);
     }
 
     public Album save(Album album) { return this.albumRepository.save(album); }
 
-    public boolean existsByName(String name) {return this.albumRepository.existsByName(name);
-    }
+    public Boolean existsByName(String name) {return this.albumRepository.existsByName(name);}
+    public Boolean existsById(Long id) {return this.albumRepository.existsById(id);}
+
+    public void deleteAll() { this.albumRepository.deleteAll();}
+    public void deleteById(Long id) { this.albumRepository.deleteById(id);}
 }

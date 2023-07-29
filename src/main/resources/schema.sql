@@ -32,23 +32,36 @@ use `statify`;
 -- Structure de la table `user`
 --
 
-CREATE TABLE IF NOT EXISTS `user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(100) NOT NULL,
-  `username` varchar(100) DEFAULT NULL,
-  `password` varchar(100) DEFAULT NULL,
-   PRIMARY KEY (id)
+CREATE TABLE IF NOT EXISTS `users` (
+  uuid VARCHAR(36) NOT NULL PRIMARY KEY DEFAULT UUID(),
+  email VARCHAR(255) NOT NULL,
+  username VARCHAR(255) NOT NULL,
+  enabled boolean not null,
+  password VARCHAR(255) NOT NULL,
+  role VARCHAR(255) NOT NULL DEFAULT "USER",
+  UNIQUE KEY username(username),
+  UNIQUE KEY email(email)
   ) ENGINE=InnoDB;
 
 
+--CREATE TABLE IF NOT EXISTS `authorities` (
+--  `email` VARCHAR(255),
+--  `role` VARCHAR(255)
+--  ) ENGINE=InnoDB;
 
--- --------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS `roles` (
+  `user_id` VARCHAR(36),
+  `role` VARCHAR(255),
+   FOREIGN KEY (user_id) REFERENCES users(uuid)
+  ) ENGINE=InnoDB;
+
 
 --
 -- Structure de la table `spotify_user`
 --
 
-CREATE TABLE IF NOT EXISTS `spotify_user` (
+CREATE TABLE IF NOT EXISTS `spotify_users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(100) NOT NULL,
   `spotify_username` varchar(100) DEFAULT NULL,
@@ -56,10 +69,12 @@ CREATE TABLE IF NOT EXISTS `spotify_user` (
   `gender` varchar(10) DEFAULT NULL,
   `birthdate` date DEFAULT NULL,
   `creation_time` date DEFAULT NULL,
+  `user_uuid` VARCHAR(36) NOT NULL,
   PRIMARY KEY (id),
+  FOREIGN KEY (user_uuid) REFERENCES users(uuid),
   UNIQUE KEY spotify_username(spotify_username),
   UNIQUE KEY email(email)
-) ENGINE=InnoDB;
+  ) ENGINE=InnoDB;
 
 
 -- --------------------------------------------------------
@@ -72,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `artists` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(250) DEFAULT NULL,
   PRIMARY KEY (id)
-) ENGINE=InnoDB;
+  ) ENGINE=InnoDB;
 
 -- ------------------------------------------------------
 
@@ -86,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `albums` (
   `artist_id` int(11) NOT NULL,
   PRIMARY KEY (id),
   FOREIGN KEY (artist_id) REFERENCES artists(id)
-) ENGINE=InnoDB;
+  ) ENGINE=InnoDB;
 
 
 
@@ -105,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `tracks` (
   `episode` boolean DEFAULT NULL,
   PRIMARY KEY (id),
   FOREIGN KEY (album_id) REFERENCES albums(id)
-) ENGINE=InnoDB;
+  ) ENGINE=InnoDB;
 
 
 -- --------------------------------------------------------
@@ -124,8 +139,8 @@ CREATE TABLE IF NOT EXISTS `playlists` (
   `number_of_tracks` int(11) DEFAULT NULL,
 
   PRIMARY KEY (id),
-  FOREIGN KEY (spotify_user_id) REFERENCES spotify_user(id)
-) ENGINE=InnoDB;
+  FOREIGN KEY (spotify_user_id) REFERENCES spotify_users(id)
+  ) ENGINE=InnoDB;
 
 
 -- --------------------------------------------------------
@@ -140,9 +155,9 @@ CREATE TABLE IF NOT EXISTS `playlist_tracks` (
   `track_id` int(11) DEFAULT NULL,
   `added_date` date DEFAULT NULL,
   PRIMARY KEY (id),
-FOREIGN KEY (playlist_id) REFERENCES playlists(id),
-FOREIGN KEY (track_id) REFERENCES tracks(id)
-) ENGINE=InnoDB;
+  FOREIGN KEY (playlist_id) REFERENCES playlists(id),
+  FOREIGN KEY (track_id) REFERENCES tracks(id)
+  ) ENGINE=InnoDB;
 
 
 -- --------------------------------------------------------
@@ -160,8 +175,8 @@ CREATE TABLE IF NOT EXISTS `historics` (
   `msplayed` double DEFAULT NULL,
   `album_id`  int(11) DEFAULT NULL,
   PRIMARY KEY (id),
-  FOREIGN KEY (spotify_user_id) REFERENCES spotify_user(id),
+  FOREIGN KEY (spotify_user_id) REFERENCES spotify_users(id),
   FOREIGN KEY (album_id) REFERENCES albums(id),
   FOREIGN KEY (artist_id) REFERENCES artists(id),
   FOREIGN KEY (track_id) REFERENCES tracks(id)
-) ENGINE=InnoDB;
+  ) ENGINE=InnoDB;

@@ -17,19 +17,20 @@ import lombok.Setter;
 public class Track {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonView(Views.AlbumResponseView.class)
+    @JsonView({Views.AlbumResponseView.class, Views.HistoricsView.class})
     @Column(name="id")
     private Long id;
 
     @Column(name="name",length = 100)//, unique=true)
-    @JsonView(Views.AlbumResponseView.class)
+    @JsonView({Views.AlbumResponseView.class, Views.HistoricsView.class})
     private String name;
 
     @ManyToOne(targetEntity = Album.class)
-    @JsonView(Views.AlbumResponseView.class)
+    //@JsonView(Views.AlbumResponseView.class)
     private Album album;
 
     @Column(name="uri", unique=true)
+    @JsonView(Views.AlbumResponseView.class)
     private String trackURI;
 
     private Boolean localtrack;

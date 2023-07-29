@@ -1,14 +1,12 @@
-FROM openjdk:17-oracle as builder
+FROM maven:3.8.3-openjdk-17 as builder
 WORKDIR application
 COPY ./pom.xml ./pom.xml
-COPY mvnw .
 COPY .mvn .mvn
 COPY ./src ./src
-RUN ["chmod", "+x", "mvnw"]
-RUN ./mvnw -N io.takari:maven:wrapper
-RUN ./mvnw dependency:go-offline -B
-RUN ./mvnw clean package && cp target/statify-1.0.jar statify-1.0.jar
-RUN java -Djarmode=layertools -jar statify-1.0.jar extract
+RUN mvn -N io.takari:maven:wrapper
+RUN mvn dependency:go-offline -B
+RUN mvn clean package && cp target/statify-latest.jar Statify-PROTOTYPE.jar
+RUN java -Djarmode=layertools -jar Statify-PROTOTYPE.jar extract
 #ENTRYPOINT ["java","-jar", "publish-docker-image-to-docker-hub-1.0-SNAPSHOT.jar"]
 FROM openjdk:17-oracle
 WORKDIR application

@@ -15,7 +15,7 @@ public interface AlbumRepository extends CrudRepository<Album, Long> {
 
     Optional<Album> findById(Long id);
 
-    Album findByName(String name);
+    Optional<Album> findByName(String name);
 
     boolean existsByName(String name);
 }

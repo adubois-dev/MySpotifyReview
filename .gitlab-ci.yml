@@ -1,0 +1,63 @@
+
+
+stages: # List of stages for jobs, and their order of execution
+  - build
+  - push
+  - deploy
+
+docker-build:
+  stage: build
+  needs: []
+  image: docker:latest
+  script:
+    - docker build . --tag $CI_REGISTRY_IMAGE
+    - echo "docker build complete"
+
+maven-build:
+  image: maven:3.8.3-openjdk-17
+  needs: []
+  stage: build
+  services:
+    - docker:dind
+  script:
+    - "mvn spring-boot:build-image"
+    - echo "mvn build complete"
+  artifacts:
+    paths:
+      - target/*.jar
+
+docker-push:
+  stage: push
+  needs: ["docker-build"]
+  image: docker:latest
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - docker push "$CI_REGISTRY_IMAGE"
+    - echo "docker push complete"
+
+maven-push:
+  stage: push
+  needs: ["maven-build"]
+  image: docker:latest
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - docker push "$CI_REGISTRY_IMAGE_MAVEN"
+    - echo "maven image push complete"
+
+deploy-job:  # This job runs in the  stage.
+  stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
+  needs: ["maven-push"]
+  environment: production
+  image: alpine
+  before_script:
+    - apk update
+    - apk add openssh-client
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+  script:
+    - ssh -o "StrictHostKeyChecking=no" $SERVER_USER@$SERVER_URL "cd /home/debian/dockerFiles/Statify/ && git pull && docker-compose down && docker rmi -f anonomous/statify && docker-compose up -d"
+

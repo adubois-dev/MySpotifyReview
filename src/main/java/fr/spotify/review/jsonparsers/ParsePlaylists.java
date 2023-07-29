@@ -1,15 +1,20 @@
 package fr.spotify.review.jsonparsers;
 
-import fr.spotify.review.domain.*;
 import fr.spotify.review.entities.*;
+import fr.spotify.review.exception.StatifyResourceNotFoundException;
+import fr.spotify.review.repositories.UserRepository;
 import fr.spotify.review.services.*;
-import org.json.JSONTokener;
+import lombok.AllArgsConstructor;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.json.JSONTokener;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
-import java.io.FileReader;
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.sql.SQLException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -18,89 +23,121 @@ import java.util.List;
 
 //import static fr.spotify.review.Main.CONNECTION;
 
+@Service
+@AllArgsConstructor
 public class ParsePlaylists {
+    private final PlaylistTrackService playlistTrackService;
+    private final PlaylistService playlistService;
+    private final AlbumService albumService;
+    private final ArtistService artistService;
+    private final TrackService trackService;
 
-    public static void parsePlaylists(PlaylistTrackService playTrackServ, PlaylistService playlistService, SpotifyUserService spuService, AlbumService albumServ, ArtistService artistService, TrackService trackService) throws SQLException {
-        //PARSE StreamingHistory;
+    public void parsePlaylists(User user, MultipartFile file){
         JSONArray playlists = null;
         JSONTokener playlist = null;
-        //Open the File
-        try {
-            playlist = new JSONTokener(new FileReader("/mnt/docker/MyData/Playlist1.json"));
-            JSONObject playlistTemp= new JSONObject(playlist);
-            playlists=playlistTemp.getJSONArray("playlists");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        //Parse i
-        int len = playlists.length();
-
-        for (int i = 0; i < len; i++) {
-            JSONObject singlePlaylist = (JSONObject) playlists.get(i);
-            Date lastModifiedDate = null;
-            DateFormat parseFormat = new SimpleDateFormat("yyyy-MM-dd");
+        if (!file.isEmpty()) {
             try {
-                lastModifiedDate = parseFormat.parse((String) singlePlaylist.getString("lastModifiedDate"));
-            } catch (java.text.ParseException e) {
+                playlist = new JSONTokener(new BufferedReader(new InputStreamReader(file.getInputStream(), StandardCharsets.UTF_8)));
+            } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+            JSONObject playlistTemp = new JSONObject(playlist);
+            playlists = playlistTemp.getJSONArray("playlists");
 
-            JSONArray tracks = singlePlaylist.getJSONArray("items");
-
-            //Case description field is null
-            String description;
-            if(singlePlaylist.get("description").equals(JSONObject.NULL))description="";
-            else description=singlePlaylist.getString("description");
-
-            Playlist myPlaylist = new Playlist((String) singlePlaylist.getString("name"), spuService.findSpotifyUserByEmail("adubois.personnel@gmail.com"), lastModifiedDate, description, singlePlaylist.getLong("numberOfFollowers"), Long.valueOf(tracks.length()));
-            playlistService.save(myPlaylist);
-            for(int j=0; j< tracks.length(); j++)
-            {
-                JSONObject jsonSingleTrack= (JSONObject) tracks.get(j);
-                JSONObject  jsonMoreInformation=(JSONObject)jsonSingleTrack.getJSONObject("track");
-                String trackURI= jsonMoreInformation.getString("trackUri");
-                Artist artist = artistService.findByName(jsonMoreInformation.getString("artistName"));
-                if (artist==null) {
-                    artist = new Artist(jsonMoreInformation.getString("artistName"));
-                    artistService.save(artist);
-                }
-
-                Album album = albumServ.findByName(jsonMoreInformation.getString("albumName"));
-                if (album==null) {
-                    album = new Album(jsonMoreInformation.getString("albumName"), artist);
-                    albumServ.save(album);
-                }
-                Track title = trackService.findByTrackURI(trackURI);
-                if (title==null) {
-                    title = new Track(jsonMoreInformation.getString("trackName"), trackURI, album);
-                    trackService.save(title);
-                }
-                Boolean localTrack;
-                if(jsonSingleTrack.get("localTrack").equals(JSONObject.NULL))localTrack=false;
-                else localTrack= jsonSingleTrack.getBoolean("localTrack");
-                Boolean episode;
-                if(jsonSingleTrack.get("episode").equals(JSONObject.NULL))episode=false;
-                else episode = jsonSingleTrack.getBoolean("episode");
-                title.setTrackURI(trackURI);
-                title.setLocaltrack(localTrack);
-                title.setEpisode(episode);
-                trackService.save(title);
-
-                //title.updateTrackInfo();
-
-                Date addedDate = null;
+            for (int i = 0; i < playlists.length(); i++) {
+                JSONObject singlePlaylist = (JSONObject) playlists.get(i);
+                Date lastModifiedDate = null;
+                DateFormat parseFormat = new SimpleDateFormat("yyyy-MM-dd");
                 try {
-                    addedDate = parseFormat.parse(jsonSingleTrack.getString("addedDate"));
+                    lastModifiedDate = parseFormat.parse(singlePlaylist.getString("lastModifiedDate"));
                 } catch (java.text.ParseException e) {
                     throw new RuntimeException(e);
                 }
 
-                PlaylistTrack singleTrack= new PlaylistTrack(trackService.findByTrackURI(title.getTrackURI()), playlistService.getPlaylistByName(myPlaylist.getName()), addedDate);
-                playTrackServ.save(singleTrack);
-              //  singleTrack.insertAsNewPlaylistTrack();
-               // CONNECTION.commit();
+                JSONArray tracks = singlePlaylist.getJSONArray("items");
+
+                //Case description field is null
+                String description;
+                if (singlePlaylist.get("description").equals(JSONObject.NULL)) description = "";
+                else description = singlePlaylist.getString("description");
+                Playlist myPlaylist=null;
+                if(playlistService.existsByNameAndUserUuid(singlePlaylist.getString("name"), user.getUuid())) myPlaylist=playlistService.findByNameAndUserUuid(singlePlaylist.getString("name"), user.getUuid())
+                        .orElseThrow(() -> new StatifyResourceNotFoundException("Query returned empty result. No Artist for id : "));
+                else {
+                    myPlaylist = new Playlist(singlePlaylist.getString("name"), user, lastModifiedDate, description, singlePlaylist.getLong("numberOfFollowers"), Long.valueOf(tracks.length()));
+                    playlistService.save(myPlaylist);
+                }
+                for (int j = 0; j < tracks.length(); j++) {
+                    JSONObject jsonSingleTrack = (JSONObject) tracks.get(j);
+                    JSONObject jsonMoreInformation = jsonSingleTrack.getJSONObject("track");
+                    String trackURI = jsonMoreInformation.getString("trackUri");
+                    String artistName=jsonMoreInformation.getString("artistName");
+                    Artist artist=null;
+                   if(artistService.existsByName(artistName))
+                     artist = artistService.findByName(artistName).get();
+
+                    else {
+                        artist = new Artist(artistName);
+                        artistService.save(artist);
+                    }
+
+                    Album album =null;
+                    if(albumService.existsByName(jsonMoreInformation.getString("albumName"))) album= albumService.findByName(jsonMoreInformation.getString("albumName")).get();
+
+                    else
+                    {
+                        album = new Album(jsonMoreInformation.getString("albumName"), artist);
+                        albumService.save(album);
+                    }
+                    Boolean localTrack;
+                    String trackName=jsonMoreInformation.getString("trackName");
+                    if (jsonSingleTrack.get("localTrack").equals(JSONObject.NULL)) localTrack = false;
+                    else localTrack = jsonSingleTrack.getBoolean("localTrack");
+                    Boolean episode;
+                    if (jsonSingleTrack.get("episode").equals(JSONObject.NULL)) episode = false;
+                    else episode = jsonSingleTrack.getBoolean("episode");
+                    Track title=null;
+                    if(trackService.existsByTrackURI(trackURI))  title = trackService.findByTrackURI(trackURI).get();
+                    else if (trackService.existsByNameAndAlbumAndAlbumArtist(trackName, album, artist)) title = trackService.findByNameAndAlbumAndAlbumArtist(trackName, album, artist).get();
+                    else if (trackService.existsByNameAndAlbum(trackName, album)) title = trackService.findByNameAndAlbum(trackName, album).get();
+
+                    if(title==null)
+                    {
+                        List<Track> titles = trackService.findAllByName(trackName);
+                        if (titles.size() > 1) {
+                            for (Track track : titles) {
+                                if (track.getAlbum() != null && track.getAlbum().getArtist() != null && track.getAlbum().getArtist().getName().equals(artist.getName())) {
+                                    title = track;
+                                }
+                            }
+                        title= titles.get(0); // NO choice anymore. Have to assign a value.
+                        }
+                        else if (titles.isEmpty()) {
+                            title = new Track(trackName, trackURI, album);
+                            title.setLocaltrack(localTrack);
+                            title.setEpisode(episode);
+                            trackService.save(title);
+                        }
+                        else title = titles.get(0);
+                    }
+                    title.setTrackURI(trackURI);
+                    title.setLocaltrack(localTrack);
+                    title.setEpisode(episode);
+                    trackService.save(title);
+
+
+                    Date addedDate = null;
+                    try {
+                        addedDate = parseFormat.parse(jsonSingleTrack.getString("addedDate"));
+                    } catch (java.text.ParseException e) {
+                        throw new RuntimeException(e);
+                    }
+                   if(!playlistTrackService.existsByTrackIdAndPlaylistId(title.getId(),myPlaylist.getId())) {
+                       PlaylistTrack singleTrack = new PlaylistTrack(title, myPlaylist, addedDate);
+                       playlistTrackService.save(singleTrack);
+                   }
+                }
             }
         }
-
     }
 }

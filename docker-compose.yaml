@@ -1,29 +1,36 @@
-version: "3.3"
-
-services :
+version: "2.2"
+services:
   statifypma:
+    restart: always
+    container_name: statifypma
     depends_on:
       - statifydb
     image: phpmyadmin:latest
-    container_name: statifypma
-    links:
-      - statifydb:db
+    networks:
+      mynet:
+        ipv4_address: 10.5.0.2
     ports:
       - "8084:80"
   statifyapp:
+    container_name: statifyapp
+    restart: always
     depends_on:
       - statifydb
-    image: anonomous/statify:latest
-    container_name: statifyapp
-    links:
-      - statifydb:app_db
+    image: anonomous/statify
+    networks:
+      mynet:
+        ipv4_address: 10.5.0.3
+        aliases:
+          - statifyapp
+          - app
     ports:
       - "8083:8080"
     volumes:
       - ./MyData:/mnt/docker/MyData
   statifydb:
-    image: mariadb
     container_name: statifydb
+    image: mariadb
+    restart: always
     ports:
       - "3309:3306"
     environment:
@@ -31,5 +38,28 @@ services :
       - MARIADB_PASSWORD=wUWDRcJTIHfCu4nj3PaWSVB46pvJw70hDItD78v8dJ
       - MARIADB_DATABASE=statify
       - MARIADB_ROOT_PASSWORD=bcgFyIWpecKBm6tOPgKWY6YjBs4CLlIxNCUIN4MDnpPjNAfphx
+    networks:
+      mynet:
+        ipv4_address: 10.5.0.4
+        aliases:
+          - db
+          - app_db
     volumes:
-      - ./database:/mnt/docker/mariadb
+      - ./mariadb/database:/mnt/docker/mariadb
+      - ./mariadb/scripts:/docker-entrypoint-initdb.d
+  statifyfront:
+    container_name: statifyfront
+    image: anonomous/statify-front
+    restart: always
+    ports:
+     - "8081:8081"
+    networks:
+      mynet:
+        ipv4_address: 10.5.0.5
+networks:
+  mynet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
+          gateway: 10.5.0.1

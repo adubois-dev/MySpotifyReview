@@ -20,17 +20,29 @@ import java.util.List;
 public class Artist {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonView(Views.AlbumResponseView.class)
+    @JsonView({Views.AlbumResponseView.class, Views.HistoricsView.class})
     @Column(name="id")
     private Long id;
 
     @Column(unique=true)
-    @JsonView(Views.AlbumResponseView.class)
+
+    @JsonView({Views.AlbumResponseView.class, Views.HistoricsView.class})
     private String name;
 
-
+    @OneToMany(targetEntity = Album.class, mappedBy = "artist")
+    @JsonView(Views.AlbumResponseView.class)
+    List<Album> albums= new ArrayList<>();
 
     public Artist(String name) {
         this.name = name;
+    }
+    public Artist(Long id, String name) {
+        this.id=id;
+        this.name = name;
+    }
+
+    public boolean equals(Artist artist){
+    if (this.getId()== artist.getId() && this.getName()==artist.getName()) return true;
+    else return false;
     }
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class PlaylistService {
@@ -27,6 +28,8 @@ public class PlaylistService {
     }
 
     public Playlist getPlaylistByName(String name) {return this.playlistRepository.findByName(name);}
+    public Boolean existsByNameAndUserUuid(String name, UUID uuid) { return this.playlistRepository.existsByNameAndUserUuid(name, uuid);}
+    public Optional<Playlist> findByNameAndUserUuid(String name, UUID uuid) { return this.playlistRepository.findByNameAndUserUuid(name, uuid);}
 
     public Playlist save(Playlist myPlaylist) { return this.playlistRepository.save(myPlaylist);}
 

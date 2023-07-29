@@ -27,6 +27,6 @@ public class PlaylistTrackService {
         return this.playlistTrackRepository.findById(id);
     }
 
-
+    public Boolean existsByTrackIdAndPlaylistId(Long track_id, Long playlist_id){return this.playlistTrackRepository.existsByTrackIdAndPlaylistId(track_id, playlist_id);}
     public PlaylistTrack save(PlaylistTrack singleTrack) {return this.playlistTrackRepository.save(singleTrack);}
 }

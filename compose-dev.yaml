@@ -1,0 +1,24 @@
+version: "3.3"
+
+services :
+  statifypma:
+    depends_on:
+      - statifydb
+    image: phpmyadmin:latest
+    container_name: statifypma
+    links:
+      - statifydb:db
+    ports:
+      - "8084:80"
+  statifydb:
+    image: mariadb
+    container_name: statifydb
+    ports:
+      - "3309:3306"
+    environment:
+      - MARIADB_USER=development
+      - MARIADB_PASSWORD=wUWDRcJTIHfCu4nj3PaWSVB46pvJw70hDItD78v8dJ
+      - MARIADB_DATABASE=statify
+      - MARIADB_ROOT_PASSWORD=bcgFyIWpecKBm6tOPgKWY6YjBs4CLlIxNCUIN4MDnpPjNAfphx
+    volumes:
+      - ./database:/mnt/docker/mariadb

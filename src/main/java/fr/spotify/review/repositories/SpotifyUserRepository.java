@@ -6,13 +6,12 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Repository
 public interface SpotifyUserRepository extends JpaRepository<SpotifyUser, Long> {
 
-
     List<SpotifyUser> findAll() ;
-
 
     Optional<SpotifyUser> findById(Long id);
 
@@ -22,4 +21,9 @@ public interface SpotifyUserRepository extends JpaRepository<SpotifyUser, Long> 
     public SpotifyUser save(SpotifyUser spUser) ;
 
     SpotifyUser findBySpotifyUsername(String spotify_username);
+
+    SpotifyUser findByUserUuid(UUID uuid);
+
+
+    SpotifyUser findByUserEmail(String email);
 }

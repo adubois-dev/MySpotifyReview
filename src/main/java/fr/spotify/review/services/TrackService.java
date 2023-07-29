@@ -1,6 +1,8 @@
 package fr.spotify.review.services;
 
 
+import fr.spotify.review.entities.Album;
+import fr.spotify.review.entities.Artist;
 import fr.spotify.review.entities.Track;
 import fr.spotify.review.repositories.TrackRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,13 +31,31 @@ public class TrackService {
 
     public Track save(Track track) {return this.trackRepository.save(track);}
 
-    public Track findByTrackURI(String trackURI) {
+    public Optional<Track> findByTrackURI(String trackURI) {
         return this.trackRepository.findByTrackURI(trackURI);
     }
 
-    public boolean existsByTrackURI(String trackURI) { return this.trackRepository.existsByTrackURI(trackURI);}
+    public Optional<Track> findByNameAndAlbumAndAlbumArtist(String name, Album album, Artist artist) {
+        return this.trackRepository.findByNameAndAlbumAndAlbumArtist(name, album, artist);
+    }
+    public Optional<Track> findByNameAndAlbum(String name, Album album) {
+        return this.trackRepository.findByNameAndAlbum(name, album);
+    }
 
-    public boolean existsByName(String name) {return this.trackRepository.existsByName(name);}
+    public Boolean existsByNameAndAlbumAndAlbumArtist(String name, Album album, Artist artist) {
+        return this.trackRepository.existsByNameAndAlbumAndAlbumArtist(name, album, artist);
+    }
+
+
+    public Boolean existsByTrackURI(String trackURI) { return this.trackRepository.existsByTrackURI(trackURI);}
+
+    public Boolean existsByName(String name) {return this.trackRepository.existsByName(name);}
 
     public Track findByName(String name) {return this.trackRepository.findByName(name);}
+
+    public List<Track> findAllByName(String trackName) {
+        return this.trackRepository.findAllByName(trackName);
+    }
+
+    public Boolean existsByNameAndAlbum(String trackName, Album album) { return this.trackRepository.existsByNameAndAlbum( trackName,  album);}
 }
