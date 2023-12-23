@@ -86,6 +86,8 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
             .requestMatchers("/api/historic/user/**").permitAll()
             .requestMatchers("/api/spUser/user/**").permitAll()
             .requestMatchers("/api/upload/**").permitAll()
+            .requestMatchers("/api/album/**").permitAll()
+            .requestMatchers("/api/artist/**").permitAll()
             .anyRequest().authenticated();
     
     http.authenticationProvider(authenticationProvider());
