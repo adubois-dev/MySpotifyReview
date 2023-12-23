@@ -68,7 +68,7 @@ public class ParseHistorics {
                         albumService.save(album);
                     }
                 }
-                if (!(jsonO.get("master_metadata_track_name").equals(JSONObject.NULL)) && !(jsonO.get("spotify_track_uri").equals(JSONObject.NULL))) {
+                if (        !(jsonO.get("master_metadata_track_name").equals(JSONObject.NULL)) && !(jsonO.get("spotify_track_uri").equals(JSONObject.NULL))) {
                     String trackName = jsonO.getString("master_metadata_track_name");
                     String trackURI = jsonO.getString("spotify_track_uri");
                     if (trackService.existsByTrackURI(trackURI)) {

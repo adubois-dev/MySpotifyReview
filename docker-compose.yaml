@@ -24,7 +24,7 @@ services:
           - statifyapp
           - app
     ports:
-      - "8083:8080"
+      - "8080:8080"
     volumes:
       - ./MyData:/mnt/docker/MyData
   statifydb:
@@ -32,7 +32,7 @@ services:
     image: mariadb
     restart: always
     ports:
-      - "3309:3306"
+      - "3306:3306"
     environment:
       - MARIADB_USER=development
       - MARIADB_PASSWORD=wUWDRcJTIHfCu4nj3PaWSVB46pvJw70hDItD78v8dJ
@@ -53,6 +53,8 @@ services:
     restart: always
     ports:
      - "8081:8081"
+    depends_on:
+    - statifyapp
     networks:
       mynet:
         ipv4_address: 10.5.0.5

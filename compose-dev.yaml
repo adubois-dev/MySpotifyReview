@@ -8,6 +8,9 @@ services :
     container_name: statifypma
     links:
       - statifydb:db
+    networks:
+      mynet:
+        ipv4_address: 10.5.0.2
     ports:
       - "8084:80"
   statifydb:
@@ -22,3 +25,25 @@ services :
       - MARIADB_ROOT_PASSWORD=bcgFyIWpecKBm6tOPgKWY6YjBs4CLlIxNCUIN4MDnpPjNAfphx
     volumes:
       - ./database:/mnt/docker/mariadb
+    networks:
+      mynet:
+        ipv4_address: 10.5.0.4
+        aliases:
+          - db
+          - app_db
+  statifyfront:
+    container_name: statifyfront
+    image: anonomous/statify-front
+    restart: always
+    ports:
+     - "8081:8081"
+    networks:
+      mynet:
+        ipv4_address: 10.5.0.5
+networks:
+  mynet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
+          gateway: 10.5.0.1

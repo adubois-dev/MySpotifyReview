@@ -21,7 +21,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RestController
-@CrossOrigin(origins={"http://localhost","http://anonomous.fr:8081","http://statifyfront:8081","http://localhost:8082","http://localhost:8081"}, allowCredentials = "true")
+@CrossOrigin(origins={"http://localhost:4200","http://statifyfront:8081","http://localhost:8081","http://10.5.0.5:8081"}, allowCredentials = "true")
 @RequestMapping("api/historic")
 public class HistoricRestController {
 
