@@ -1,4 +1,4 @@
-# MySpotifyReview
+# Statify
 
 
 Just launch a "docker-compose up".
@@ -14,8 +14,9 @@ Upload your files. Files are being parsed bu the Spring Boot server and informat
 
 One done you have the two following pages restoring parsed informations :
 - http://localhost:8081/assessment
-- ![image](https://github.com/adubois-dev/Statify/assets/126862970/c579a981-bcc3-43d4-b36c-4ccc5f83226f)
+![image](https://github.com/adubois-dev/Statify/assets/126862970/c579a981-bcc3-43d4-b36c-4ccc5f83226f)
 - And http://localhost:8081/top50
-- ![image](https://github.com/adubois-dev/Statify/assets/126862970/8d0d1ab7-4a86-4ad9-a523-04673fad6a37)
+![image](https://github.com/adubois-dev/Statify/assets/126862970/8d0d1ab7-4a86-4ad9-a523-04673fad6a37)
 
-  All the data stored in the database can be monitored followed and used with the PHPMyAdmin Interface available at http://localhost:8084/
+- All the data stored in the database can be monitored followed and used with the PHPMyAdmin Interface available at http://localhost:8084/
+- All datas you use with the present project including the personal infoprmations of the created account are stored only in your local database and nowhere else. We do not have access to it. You have and keep complete control about your personal informations
