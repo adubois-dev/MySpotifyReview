@@ -1,7 +1,7 @@
 # MySpotifyReview
 
 
-Just launche a "docker-compose up".
+Just launch a "docker-compose up".
 
 It launches the angular web server, the mysql server, the  Spring Boot server and an instance of PHPMyAdmin to monitor the databases entries.
 
