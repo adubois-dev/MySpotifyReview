@@ -1,12 +1,13 @@
 # MySpotifyReview
 
 
-docker-compose up
+Just launche a "docker-compose up".
+
 It launches the angular web server, the mysql server, the  Spring Boot server and an instance of PHPMyAdmin to monitor the databases entries.
 
 Connect to the angular Web Interface on http://localhost:8081/
 
-Create an account a&nd LOgin to upload the historic files you'll have gathered from  https://www.spotify.com/us/account/privacy/
+Create an account and Login to upload the historic files you'll have gathered from  https://www.spotify.com/us/account/privacy/
 
 Upload your files. Files are being parsed bu the Spring Boot server and information is stored inside the MySQL Server
 ![image](https://github.com/adubois-dev/Statify/assets/126862970/95361f26-5c0a-42ba-b92b-c380cf4ffc22)
